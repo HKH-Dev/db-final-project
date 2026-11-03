@@ -56,7 +56,11 @@ public class ReporteController {
         @SuppressWarnings("unchecked")
         List<Map<String, Object>> filas = (List<Map<String, Object>>) d.get("filas");
         if (r.grafico() != null && !filas.isEmpty()) {
-            d.put("imagenGrafico", graficos.png(r.grafico(), filas, r.grafico().circular() ? 620 : 720, r.grafico().circular() ? 300 : 330));
+            // en hoja horizontal (mas de 7 columnas) el grafico es mas bajo para que quepa en la primera pagina
+            boolean horizontal = r.columnas().size() > 7;
+            int ancho = horizontal ? 1100 : (r.grafico().circular() ? 620 : 720);
+            int alto = horizontal ? 290 : (r.grafico().circular() ? 300 : 330);
+            d.put("imagenGrafico", graficos.png(r.grafico(), filas, ancho, alto));
         }
         d.put("generadoPor", u.nombre());
         d.put("generado", LocalDateTime.now());

@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5 { font-weight: 700; letter-spacing: -.01em; }
 .fm-lateral .marca { display: flex; align-items: center; gap: .6rem; padding: 1.15rem 1.25rem; color: #fff; text-decoration: none; }
 .fm-lateral .marca .logo { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--fm-naranja), #f5b041);
   display: grid; place-items: center; font-size: 1.15rem; }
+.tabla-fm td.num, .kpi .val { white-space: nowrap; }
 .fm-lateral .marca b { font-size: 1.05rem; display: block; line-height: 1.1; }
 .fm-lateral .marca small { color: #8fb5a0; font-size: .72rem; }
 .fm-lateral .grupo { text-transform: uppercase; font-size: .68rem; letter-spacing: .08em; color: #7f9a8b; padding: 1rem 1.25rem .35rem; font-weight: 700; }

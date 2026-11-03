@@ -33,11 +33,11 @@
   <tbody>
     <tr th:each="f : ${filas}"><td th:each="c : ${r.columnas}" th:class="${c.numerica()} ? 'num'" th:text="${fmt.valor(f[c.clave], c.formato)}"></td></tr>
     <tr th:if="${filas.isEmpty()}"><td th:colspan="${r.columnas.size()}" style="text-align:center;padding:14pt" class="gris">Sin resultados con estos filtros.</td></tr>
+    <tr class="total" th:if="${!totales.isEmpty() and !filas.isEmpty()}">
+      <td th:each="c, st : ${r.columnas}" th:class="${c.numerica()} ? 'num'"
+          th:text="${c.total} ? ${fmt.valor(totales[c.clave], c.formato)} : (${st.first} ? 'TOTAL' : '')"></td>
+    </tr>
   </tbody>
-  <tfoot th:if="${!totales.isEmpty() and !filas.isEmpty()}"><tr>
-    <td th:each="c, st : ${r.columnas}" th:class="${c.numerica()} ? 'num'"
-        th:text="${c.total} ? ${fmt.valor(totales[c.clave], c.formato)} : (${st.first} ? 'TOTAL' : '')"></td>
-  </tr></tfoot>
 </table>
 <p class="peq gris" style="margin-top:10pt">Tablas consultadas: <span th:text="${#strings.listJoin(r.tablas, ', ')}"></span> · Técnicas SQL: <span th:text="${r.tecnicas}"></span></p>
 </body>
