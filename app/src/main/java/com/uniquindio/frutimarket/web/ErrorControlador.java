@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ErrorControlador implements ErrorController {
 
     @RequestMapping("/error/403")
-    public String prohibido(Model model) {
+    public String prohibido(Model model, jakarta.servlet.http.HttpServletResponse res) {
+        res.setStatus(403);
         model.addAttribute("codigo", 403);
         return "error";
     }
