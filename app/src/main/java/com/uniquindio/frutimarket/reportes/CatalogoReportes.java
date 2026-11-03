@@ -269,7 +269,7 @@ public class CatalogoReportes {
                                       AND p.fecha_pedido >= CURDATE() - INTERVAL :dias DAY)
                  ORDER BY dias_sin_comprar DESC
                 """,
-                List.of(Parametro.entero("dias", "Sin pedidos en los últimos (días)", "10")),
+                List.of(Parametro.entero("dias", "Sin pedidos en los últimos (días)", "5")),
                 List.of(texto("nombre", "Cliente"), de("tipo_cliente", "Tipo", Formato.ESTADO), texto("telefono", "Teléfono"),
                         texto("plan", "Plan"), de("estado", "Estado", Formato.ESTADO), de("fecha_fin", "Vence", Formato.FECHA),
                         de("ultima_compra", "Última compra", Formato.FECHA), de("dias_sin_comprar", "Días sin comprar", Formato.ENTERO),
