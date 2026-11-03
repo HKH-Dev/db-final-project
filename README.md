@@ -36,7 +36,7 @@ y pide tres características mínimas. En FrutiMarket los mismos papeles y carac
 | Bonificación: 3 reportes con gráficos | **5 reportes** con gráfico (4, 5, 7, 8 y 10), también dentro del PDF |
 | Login con usuario y contraseña validados | Spring Security, contraseñas BCrypt en la tabla `usuario`, roles ADMIN / OPERADOR / CAMPESINO / CLIENTE |
 | Plantillas de documentos | Factura de venta, comprobante de pago, guía de despacho y certificado de suscripción (`templates/pdf/`) |
-| Datos reales | Municipios con código DANE, veredas reales, nombres y apellidos colombianos, cédulas y NIT con dígito de verificación, celulares 3xx, precios de 2026, salario ≥ SMMLV 2026 ($ 1.750.905). 2.348 pedidos simulados entre enero y noviembre de 2026 |
+| Datos reales | Municipios con código DANE, veredas reales, nombres y apellidos colombianos, cédulas y NIT con dígito de verificación, celulares 3xx, precios de 2026, salario ≥ SMMLV 2026 ($ 1.750.905). 2.322 pedidos simulados entre enero y noviembre de 2026 |
 
 ## Entidades
 

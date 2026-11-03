@@ -562,7 +562,7 @@ while d <= FIN:
         if (actual is None and d == inicio) or (actual is not None and actual[2] == d):
             if actual is not None:
                 suscripciones[actual[0] - 1][5] = "VENCIDA"
-                if random.random() < .08:           # algunos no renuevan
+                if cid != cid_demo and random.random() < {"SEMANAL": .015, "QUINCENAL": .03}.get(PLANES[plan - 1][2], .06):  # algunos no renuevan
                     suscripcion_activa.pop(cid)
                     plan_cliente[cid] = (plan, FIN + timedelta(days=99))
                     continue
@@ -689,7 +689,7 @@ while d <= FIN:
 for cid, (sid, plan, fin) in suscripcion_activa.items():
     if fin <= HOY:
         suscripciones[sid - 1][5] = "VENCIDA"
-for s in random.sample([s for s in suscripciones if s[5] == "ACTIVA"], k=2):
+for s in random.sample([s for s in suscripciones if s[5] == "ACTIVA" and s[1] != cid_demo], k=2):
     s[5] = "PAUSADA"
 
 # alertas de inventario para los coordinadores
