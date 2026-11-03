@@ -1,0 +1,7 @@
+<!-- Celda de tabla segun el formato de la columna -->
+<td th:fragment="td(valor, col)" th:class="${col.numerica()} ? 'num'" xmlns:th="http://www.thymeleaf.org">
+  <span th:if="${col.formato.name() == 'ESTADO' and valor != null}" class="estado" th:classappend="${fmt.claseEstado(valor)}" th:text="${fmt.etiqueta(valor)}">Estado</span>
+  <span th:if="${col.formato.name() == 'BOOLEANO'}" th:class="${fmt.si(valor)} ? 'text-success' : 'text-secondary'"
+        th:text="${fmt.siNo(valor)}">Sí</span>
+  <th:block th:unless="${col.formato.name() == 'ESTADO' or col.formato.name() == 'BOOLEANO'}" th:text="${fmt.valor(valor, col.formato)}">valor</th:block>
+</td>

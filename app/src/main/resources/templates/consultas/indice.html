@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Consultas · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <div class="migas"><a href="/">Inicio</a> / Consultas</div>
+      <h1>Consultas</h1>
+      <p>Datos específicos que se necesitan en un momento dado: lo que compró un cliente, el detalle de un pedido,
+        el origen de un lote… (Los listados para decidir están en <a href="/reportes">Reportes</a>.)</p>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-md-6 col-xl-3" th:each="c : ${consultas}">
+      <a class="tarjeta tarjeta-reporte tarjeta-cuerpo" th:href="@{/consultas/{k}(k=${c.clave})}">
+        <span class="kpi p-0"><span class="ico ico-verde mb-2"><i th:class="'bi bi-' + ${c.icono}"></i></span></span>
+        <h3 class="h6 mb-1" th:text="${c.titulo}">Título</h3>
+        <p class="small text-secondary mb-0" th:text="${c.descripcion}">desc</p>
+      </a>
+    </div>
+  </div>
+</section>
+</body>
+</html>

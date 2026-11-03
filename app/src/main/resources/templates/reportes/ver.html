@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title th:text="${r.titulo} + ' · Reportes'">Reporte</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <div class="migas"><a href="/">Inicio</a> / <a href="/reportes">Reportes</a> / Reporte <span th:text="${r.numero}"></span></div>
+      <h1 class="d-flex align-items-center gap-2 flex-wrap"><span th:text="${r.titulo}">Título</span>
+        <span class="nivel" th:classappend="'nivel-' + ${#strings.toLowerCase(r.nivel.name())}" th:text="${r.nivel.nombre}">Simple</span></h1>
+      <p th:text="${r.descripcion}">desc</p>
+      <p class="small"><i class="bi bi-lightbulb text-warning"></i> <b>Para qué sirve:</b> <span th:text="${r.decision}"></span></p>
+    </div>
+    <a class="btn btn-naranja" th:href="@{/reportes/{c}/pdf(c=${r.clave})} + '?' + ${consulta}" target="_blank"><i class="bi bi-file-earmark-pdf me-1"></i>Exportar a PDF</a>
+  </div>
+
+  <div class="tarjeta mb-3" th:if="${!filtros.isEmpty()}">
+    <div class="tarjeta-cuerpo py-3"><form th:replace="~{fragments/tabla :: filtros(${filtros}, @{/reportes/{c}(c=${r.clave})}, ~{})}"></form></div>
+  </div>
+
+  <div class="tarjeta mb-3" th:if="${r.grafico != null and !filas.isEmpty()}">
+    <div class="tarjeta-cab"><h2><i class="bi bi-bar-chart me-1 text-success"></i><span th:text="${r.grafico.titulo}">Gráfico</span></h2></div>
+    <div class="tarjeta-cuerpo"><div class="grafico-caja"><canvas id="grafico"></canvas></div></div>
+    <script th:inline="javascript">
+      document.addEventListener('DOMContentLoaded', () => fmGrafico('grafico', [(${graficoJson})]));
+    </script>
+  </div>
+
+  <div class="tarjeta mb-3">
+    <div class="tarjeta-cab"><h2>Resultado</h2><span class="small text-secondary"><b th:text="${filas.size()}">0</b> filas</span></div>
+    <div th:replace="~{fragments/tabla :: tabla(${r.columnas}, ${filas}, ${totales})}"></div>
+  </div>
+
+  <div class="tarjeta">
+    <div class="tarjeta-cab">
+      <h2><i class="bi bi-code-square me-1"></i>SQL del reporte</h2>
+      <span class="small text-secondary">Tablas: <span class="chip" th:each="t : ${r.tablas}" th:text="${t}"></span> · <span th:text="${r.tecnicas}"></span></span>
+    </div>
+    <div class="tarjeta-cuerpo"><pre class="sql" th:text="${r.sql}">SELECT</pre></div>
+  </div>
+</section>
+</body>
+</html>

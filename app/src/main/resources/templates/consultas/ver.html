@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title th:text="${c.titulo} + ' · Consultas'">Consulta</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <div class="migas"><a href="/">Inicio</a> / <a href="/consultas">Consultas</a></div>
+      <h1 th:text="${c.titulo}">Consulta</h1>
+      <p th:text="${c.descripcion}">desc</p>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">Otra consulta</button>
+      <ul class="dropdown-menu dropdown-menu-end"><li th:each="o : ${consultas}"><a class="dropdown-item" th:href="@{/consultas/{k}(k=${o.clave})}" th:text="${o.titulo}"></a></li></ul>
+    </div>
+  </div>
+  <div class="tarjeta mb-3"><div class="tarjeta-cuerpo py-3">
+    <form th:replace="~{fragments/tabla :: filtros(${filtros}, @{/consultas/{k}(k=${c.clave})}, ~{})}"></form>
+  </div></div>
+  <div class="tarjeta mb-3" th:each="res : ${resultados}">
+    <div class="tarjeta-cab"><h2 th:text="${res.seccion.titulo}">Sección</h2>
+      <span class="small text-secondary" th:unless="${res.seccion.ficha}"><b th:text="${res.filas.size()}"></b> filas</span></div>
+    <th:block th:if="${res.seccion.ficha}">
+      <dl class="ficha m-0" th:if="${!res.filas.isEmpty()}">
+        <div th:each="col : ${res.seccion.columnas}" th:with="val=${res.filas[0][col.clave]}">
+          <dt th:text="${col.etiqueta}"></dt>
+          <dd><span th:if="${col.formato.name() == 'ESTADO'}" class="estado" th:classappend="${fmt.claseEstado(val)}" th:text="${fmt.etiqueta(val)}"></span>
+            <span th:unless="${col.formato.name() == 'ESTADO'}" th:text="${fmt.valor(val, col.formato)}"></span></dd>
+        </div>
+      </dl>
+      <div class="vacio" th:if="${res.filas.isEmpty()}"><i class="bi bi-search"></i>No se encontró ningún registro con ese dato.</div>
+    </th:block>
+    <div th:unless="${res.seccion.ficha}" th:replace="~{fragments/tabla :: tabla(${res.seccion.columnas}, ${res.filas}, ${res.totales})}"></div>
+  </div>
+</section>
+</body>
+</html>

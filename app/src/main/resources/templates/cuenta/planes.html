@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Planes · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina"><div><div class="migas"><a href="/">Inicio</a> / Planes</div><h1>Planes de suscripción</h1>
+    <p>Canastas periódicas con fruta de temporada y descuento en todas sus compras adicionales. Pago en línea y renovación automática.</p></div></div>
+  <div class="row g-3 mb-4">
+    <div class="col-md-6 col-xl-4" th:each="pl, st : ${planes}">
+      <div class="plan-card" th:classappend="${pl.nombre == 'Canasta Familiar Quincenal'} ? 'destacado'">
+        <div class="d-flex justify-content-between align-items-start mb-1">
+          <h2 class="h5 mb-0" th:text="${pl.nombre}"></h2>
+          <span class="estado" th:classappend="${fmt.claseEstado(pl.periodicidad)}" th:text="${fmt.etiqueta(pl.periodicidad)}"></span>
+        </div>
+        <div class="precio my-2"><span th:text="${fmt.moneda(pl.precio)}"></span> <small class="fs-6 fw-normal text-secondary">/ periodo</small></div>
+        <p class="small text-secondary" th:text="${pl.descripcion}"></p>
+        <ul class="list-unstyled small mb-3">
+          <li><i class="bi bi-check2 text-success me-1"></i><b th:text="${fmt.kg(pl.kg_incluidos)}"></b> de fruta incluidos</li>
+          <li><i class="bi bi-check2 text-success me-1"></i><b th:text="${fmt.porcentaje(pl.descuento_pct)}"></b> de descuento en pedidos adicionales</li>
+          <li><i class="bi bi-check2 text-success me-1"></i>Recordatorio antes de cada renovación</li>
+        </ul>
+        <a class="btn mt-auto" th:classappend="${activa} ? 'btn-light disabled' : 'btn-primary'" th:href="@{/planes/{i}/pagar(i=${pl.id_plan})}"
+           th:text="${activa} ? 'Ya tienes un plan activo' : 'Suscribirme y pagar'">Suscribirme</a>
+      </div>
+    </div>
+  </div>
+  <div class="tarjeta">
+    <div class="tarjeta-cab"><h2>Mis suscripciones</h2></div>
+    <div class="tabla-scroll"><table class="tabla-fm">
+      <thead><tr><th>Plan</th><th>Inicio</th><th>Fin</th><th>Estado</th><th class="num">Valor</th><th></th></tr></thead>
+      <tbody>
+        <tr th:each="s : ${mias}">
+          <td th:text="${s.nombre}"></td><td th:text="${fmt.fecha(s.fecha_inicio)}"></td><td th:text="${fmt.fecha(s.fecha_fin)}"></td>
+          <td><span class="estado" th:classappend="${fmt.claseEstado(s.estado)}" th:text="${fmt.etiqueta(s.estado)}"></span></td>
+          <td class="num" th:text="${fmt.moneda(s.precio)}"></td>
+          <td class="text-end text-nowrap">
+            <a class="btn btn-sm btn-light" th:href="@{/documentos/certificado/{i}(i=${s.id_suscripcion})}" target="_blank"><i class="bi bi-file-pdf"></i> Certificado</a>
+            <form class="d-inline" th:if="${s.estado == 'ACTIVA'}" method="post" th:action="@{/planes/suscripcion/{i}/cancelar(i=${s.id_suscripcion})}" data-confirmar="¿Cancelar su plan? Perderá el descuento en sus pedidos.">
+              <button class="btn btn-sm btn-outline-danger">Cancelar</button></form>
+          </td>
+        </tr>
+        <tr th:if="${mias.isEmpty()}"><td colspan="6"><div class="vacio"><i class="bi bi-box2-heart"></i>Aún no tiene suscripciones.</div></td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+</body>
+</html>

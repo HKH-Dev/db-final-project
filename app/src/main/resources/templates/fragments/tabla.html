@@ -1,0 +1,31 @@
+<!-- Tabla de resultados con fila de totales (consultas y reportes) -->
+<div th:fragment="tabla(columnas, filas, totales)" class="tabla-scroll" xmlns:th="http://www.thymeleaf.org">
+  <table class="tabla-fm">
+    <thead><tr><th th:each="c : ${columnas}" th:class="${c.numerica()} ? 'num'" th:text="${c.etiqueta}">Col</th></tr></thead>
+    <tbody>
+      <tr th:each="f : ${filas}"><th:block th:each="col : ${columnas}"><td th:replace="~{fragments/celda :: td(${f[col.clave]}, ${col})}"></td></th:block></tr>
+      <tr th:if="${filas.isEmpty()}"><td th:colspan="${columnas.size()}"><div class="vacio"><i class="bi bi-inbox"></i>Sin resultados con estos filtros.</div></td></tr>
+    </tbody>
+    <tfoot th:if="${!totales.isEmpty() and !filas.isEmpty()}">
+      <tr><td th:each="c, st : ${columnas}" th:class="${c.numerica()} ? 'num'">
+        <th:block th:if="${st.first and !c.total}">Total (<span th:text="${filas.size()}"></span>)</th:block>
+        <th:block th:if="${c.total}" th:text="${fmt.valor(totales[c.clave], c.formato)}"></th:block>
+      </td></tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- Formulario de filtros -->
+<form th:fragment="filtros(filtros, accion, extra)" class="filtros" method="get" th:action="${accion}" xmlns:th="http://www.thymeleaf.org">
+  <div th:each="f : ${filtros}">
+    <label class="form-label" th:for="${'f_' + f.p.nombre}" th:text="${f.p.etiqueta}">Filtro</label>
+    <select th:if="${!f.opciones.isEmpty()}" class="form-select form-select-sm" th:id="${'f_' + f.p.nombre}" th:name="${f.p.nombre}">
+      <option th:if="${f.p.todos}" value="">Todos</option>
+      <option th:each="o : ${f.opciones}" th:value="${o.id}" th:text="${o.etiqueta}" th:selected="${o.id == f.valor}"></option>
+    </select>
+    <input th:if="${f.opciones.isEmpty()}" class="form-control form-control-sm" th:type="${f.p.inputType()}" th:id="${'f_' + f.p.nombre}"
+           th:name="${f.p.nombre}" th:value="${f.valor}">
+  </div>
+  <div><button class="btn btn-sm btn-primary"><i class="bi bi-funnel me-1"></i>Aplicar</button></div>
+  <th:block th:replace="${extra}"></th:block>
+</form>

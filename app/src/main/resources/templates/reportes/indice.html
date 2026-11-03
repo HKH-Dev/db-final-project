@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Reportes · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <div class="migas"><a href="/">Inicio</a> / Reportes</div>
+      <h1>Reportes para la toma de decisiones</h1>
+      <p>Diez listados del negocio, visibles en la aplicación y exportables a PDF. Cada uno muestra el SQL que lo genera.
+        Cinco incluyen gráfico estadístico.</p>
+    </div>
+  </div>
+  <th:block th:each="n : ${niveles}">
+    <h2 class="h6 mt-4 mb-2 d-flex align-items-center gap-2">
+      <span class="nivel" th:classappend="'nivel-' + ${#strings.toLowerCase(n.name())}" th:text="${n.nombre}">Simple</span>
+      <span class="text-secondary fw-normal small" th:text="${n.regla}">regla</span>
+    </h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-4" th:each="r : ${reportes}" th:if="${r.nivel == n}">
+        <a class="tarjeta tarjeta-reporte tarjeta-cuerpo" th:href="@{/reportes/{c}(c=${r.clave})}">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="num-rep">REPORTE <span th:text="${r.numero}"></span></span>
+            <span th:if="${r.grafico != null}" class="small text-success fw-semibold"><i class="bi bi-bar-chart-fill"></i> Con gráfico</span>
+          </div>
+          <h3 class="h6 mb-1" th:text="${r.titulo}">Título</h3>
+          <p class="small text-secondary mb-2" th:text="${r.descripcion}">desc</p>
+          <div class="mt-auto"><span class="chip" th:each="t : ${r.tablas}" th:text="${t}">tabla</span></div>
+        </a>
+      </div>
+    </div>
+  </th:block>
+</section>
+</body>
+</html>

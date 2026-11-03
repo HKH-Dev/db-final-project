@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title th:text="'Factura ' + ${f.numero}">Factura</title>
+  <style th:replace="~{pdf/estilos :: css(false)}"></style>
+</head>
+<body>
+<table class="cab"><tr>
+  <td style="width:38pt"><div class="logo">F</div></td>
+  <td><div class="empresa" th:text="${empresa.razon}"></div>
+    <div class="peq gris">NIT <span th:text="${empresa.nit}"></span> · <span th:text="${empresa.direccion}"></span><br/>
+      Tel. <span th:text="${empresa.telefono}"></span> · <span th:text="${empresa.email}"></span><br/>Responsable de IVA · Actividad CIIU 4631</div></td>
+  <td style="text-align:right;width:150pt">
+    <div class="peq gris">FACTURA ELECTRÓNICA DE VENTA</div>
+    <div style="font-size:15pt;font-weight:bold;color:#145a37" th:text="${f.numero}"></div>
+    <div class="peq">Emitida: <b th:text="${fmt.fechaHora(f.fecha_emision)}"></b></div>
+    <div class="peq">Pedido N.º <b th:text="${f.id_pedido}"></b></div>
+  </td>
+</tr></table>
+
+<table style="width:100%;margin-bottom:8pt"><tr>
+  <td style="width:58%;vertical-align:top" class="caja">
+    <div class="peq gris">ADQUIRIENTE</div>
+    <div style="font-weight:bold;font-size:10pt" th:text="${f.cliente}"></div>
+    <div th:text="${f.documento}"></div>
+    <div class="peq" th:text="${f.direccion} + ', ' + ${f.municipio}"></div>
+    <div class="peq" th:text="${f.telefono} + ' · ' + ${f.email}"></div>
+  </td>
+  <td style="width:2%"></td>
+  <td style="vertical-align:top" class="caja">
+    <div class="peq gris">ENTREGA</div>
+    <div class="peq"><b>Despacha: </b><span th:text="${f.punto}"></span></div>
+    <div class="peq"><b>Fecha: </b><span th:text="${fmt.fecha(f.fecha_entrega_programada)}"></span></div>
+    <div class="peq"><b>Dirección: </b><span th:text="${f.direccion_entrega}"></span></div>
+    <div class="peq"><b>Forma de pago: </b><span th:text="${f.medio ?: 'Contado'}"></span></div>
+    <div class="peq"><b>Referencia: </b><span th:text="${f.referencia ?: '—'}"></span></div>
+  </td>
+</tr></table>
+
+<table class="datos">
+  <thead><tr><th>#</th><th>Descripción</th><th>Lote</th><th class="num">Cantidad</th><th class="num">Valor unitario</th><th class="num">IVA</th><th class="num">Valor total</th></tr></thead>
+  <tbody><tr th:each="l : ${lineas}">
+    <td th:text="${l.linea}"></td>
+    <td><b th:text="${l.nombre}"></b> <span th:text="${l.variedad}"></span><br/><span class="peq gris" th:text="'Calidad ' + ${fmt.etiqueta(l.calidad)}"></span></td>
+    <td class="peq" th:text="${l.lote}"></td>
+    <td class="num" th:text="${fmt.kg(l.cantidad_kg)}"></td>
+    <td class="num" th:text="${fmt.moneda(l.precio_kg)}"></td>
+    <td class="num" th:text="${fmt.porcentaje(l.iva_pct)}"></td>
+    <td class="num" th:text="${fmt.moneda(l.subtotal)}"></td>
+  </tr></tbody>
+</table>
+<table class="totales">
+  <tr><td>Subtotal</td><td class="num" th:text="${fmt.moneda(f.subtotal)}"></td></tr>
+  <tr th:if="${f.descuento.signum() > 0}"><td>Descuento por suscripción</td><td class="num" th:text="'− ' + ${fmt.moneda(f.descuento)}"></td></tr>
+  <tr><td>IVA</td><td class="num" th:text="${fmt.moneda(f.iva)}"></td></tr>
+  <tr class="gran"><td>TOTAL A PAGAR</td><td class="num" th:text="${fmt.moneda(f.total)}"></td></tr>
+</table>
+<div class="caja peq" style="margin-top:14pt">
+  <b>Notas: </b>Las frutas frescas están excluidas de IVA (art. 424 E.T.); el café tostado tiene tarifa del 5 % y las pulpas del 19 %.
+  Producto de fincas campesinas del Quindío con trazabilidad por lote. <span th:if="${f.estado == 'CANCELADO'}"><b>Pedido cancelado: el valor fue reembolsado.</b></span>
+</div>
+<p class="peq gris">Documento de ejemplo generado por el sistema académico FrutiMarket BD. No tiene validez ante la DIAN.</p>
+</body>
+</html>

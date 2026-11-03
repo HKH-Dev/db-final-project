@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Mis lotes · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina"><div><h1>Mis fincas y lotes</h1><p>Lo que ha entregado en los puntos de acopio este año y cuánto se ha vendido.</p></div></div>
+  <div class="row g-3 mb-3">
+    <div class="col-md-3"><div class="tarjeta kpi"><div class="etq">Lotes entregados</div><div class="val" th:text="${resumen.lotes}"></div></div></div>
+    <div class="col-md-3"><div class="tarjeta kpi"><div class="etq">Kilos entregados</div><div class="val" th:text="${fmt.kg(resumen.kg)}"></div></div></div>
+    <div class="col-md-3"><div class="tarjeta kpi"><div class="etq">Kilos vendidos</div><div class="val" th:text="${fmt.kg(resumen.kg_vendidos)}"></div></div></div>
+    <div class="col-md-3"><div class="tarjeta kpi"><div class="etq">Valor liquidado</div><div class="val" th:text="${fmt.moneda(resumen.liquidado)}"></div></div></div>
+  </div>
+  <div class="tarjeta mb-3"><div class="tarjeta-cab"><h2>Fincas</h2></div>
+    <div class="tabla-scroll"><table class="tabla-fm"><thead><tr><th>Finca</th><th>Vereda</th><th>Municipio</th><th class="num">Área</th><th class="num">Altitud</th></tr></thead>
+      <tbody><tr th:each="f : ${fincas}"><td th:text="${f.nombre}"></td><td th:text="${f.vereda}"></td><td th:text="${f.municipio}"></td>
+        <td class="num" th:text="${f.area_hectareas} + ' ha'"></td><td class="num" th:text="${fmt.entero(f.altitud_msnm)} + ' m'"></td></tr></tbody></table></div></div>
+  <div class="tarjeta"><div class="tarjeta-cab"><h2>Lotes recientes</h2></div>
+    <div class="tabla-scroll"><table class="tabla-fm"><thead><tr><th>Lote</th><th>Producto</th><th>Finca</th><th>Punto</th><th>Cosecha</th><th class="num">Entregado</th><th class="num">Vendido</th><th class="num">Precio kg</th><th class="num">Valor</th><th>Estado</th></tr></thead>
+      <tbody><tr th:each="l : ${lotes}"><td th:text="${l.codigo}"></td><td th:text="${l.producto}"></td><td th:text="${l.finca}"></td><td th:text="${l.punto}"></td>
+        <td th:text="${fmt.fecha(l.fecha_cosecha)}"></td><td class="num" th:text="${fmt.kg(l.cantidad_kg)}"></td><td class="num" th:text="${fmt.kg(l.vendido)}"></td>
+        <td class="num" th:text="${fmt.moneda(l.precio_finca_kg)}"></td><td class="num" th:text="${fmt.moneda(l.valor)}"></td>
+        <td><span class="estado" th:classappend="${fmt.claseEstado(l.estado)}" th:text="${fmt.etiqueta(l.estado)}"></span></td></tr></tbody></table></div></div>
+</section>
+</body>
+</html>

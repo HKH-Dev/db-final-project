@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><th:block th:replace="~{fragments/cabeza :: cabeza('Algo salió mal · FrutiMarket')}"></th:block></head>
+<body>
+<div class="container py-5 text-center" style="max-width:560px">
+  <div class="display-1 fw-bold text-success" th:text="${codigo}">404</div>
+  <h1 class="h4" th:switch="${codigo}">
+    <span th:case="403">No tiene permiso para ver esta página</span>
+    <span th:case="404">No encontramos lo que busca</span>
+    <span th:case="*">Ocurrió un error inesperado</span>
+  </h1>
+  <p class="text-secondary">Si cree que es un error, comuníquese con el administrador del sistema.</p>
+  <a href="/" class="btn btn-primary mt-2">Ir al inicio</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><th:block th:replace="~{fragments/cabeza :: cabeza('Iniciar sesión · FrutiMarket')}"></th:block></head>
+<body>
+<div class="acceso">
+  <div class="acceso-arte">
+    <div class="d-flex align-items-center gap-2"><span class="logo fs-3">🍊</span><b class="fs-5">FrutiMarket Quindío</b></div>
+    <div>
+      <h1>Del campo quindiano a su mesa, sin intermediarios.</h1>
+      <p>Sistema de información para la comercialización de frutas: inventario por lotes con trazabilidad hasta la finca,
+        pedidos, planes de suscripción con pago en línea, recordatorios y reportes para decidir.</p>
+    </div>
+    <small class="opacity-75">Proyecto final · Bases de Datos · Universidad del Quindío 2026-2</small>
+  </div>
+  <div class="acceso-form">
+    <div class="caja">
+      <h2 class="h4 mb-1">Iniciar sesión</h2>
+      <p class="text-secondary mb-4">Ingrese con su usuario o correo y su contraseña.</p>
+      <div class="alerta alerta-error" th:if="${param.error}"><i class="bi bi-exclamation-triangle-fill"></i>Usuario o contraseña incorrectos, o la cuenta está inactiva.</div>
+      <div class="alerta alerta-error" th:if="${param.expirada}"><i class="bi bi-clock-history"></i>La página de ingreso había expirado. Escriba de nuevo sus datos.</div>
+      <div class="alerta alerta-ok" th:if="${param.salir}"><i class="bi bi-check-circle-fill"></i>Cerró sesión correctamente.</div>
+      <div class="alerta alerta-ok" th:if="${ok}"><i class="bi bi-check-circle-fill"></i><span th:text="${ok}"></span></div>
+      <form method="post" th:action="@{/login}">
+        <div class="mb-3">
+          <label class="form-label" for="username">Usuario o correo</label>
+          <input class="form-control form-control-lg" id="username" name="username" required autofocus autocomplete="username">
+        </div>
+        <div class="mb-4">
+          <label class="form-label" for="password">Contraseña</label>
+          <input class="form-control form-control-lg" id="password" name="password" type="password" required autocomplete="current-password">
+        </div>
+        <button class="btn btn-primary btn-lg w-100">Entrar</button>
+      </form>
+      <p class="text-center mt-3 mb-4">¿Es cliente nuevo? <a href="/registro" class="fw-semibold">Cree su cuenta</a></p>
+      <div class="demo-usuarios">
+        <b>Usuarios de demostración</b>
+        <div class="row mt-1">
+          <div class="col-6"><code>admin</code><br><small>Admin2026*</small></div>
+          <div class="col-6"><code>cliente</code><br><small>Cliente2026*</small></div>
+        </div>
+        <small class="text-secondary d-block mt-1">Operadores, campesinos y más clientes: ver README.</small>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

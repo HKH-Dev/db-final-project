@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Mi perfil · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina"><div><div class="migas"><a href="/">Inicio</a> / Mi perfil</div><h1>Mi perfil</h1>
+    <p>Actualice sus datos de contacto y su contraseña.</p></div></div>
+  <div class="row g-3">
+    <div class="col-lg-4">
+      <div class="tarjeta tarjeta-cuerpo text-center">
+        <div class="fm-avatar mx-auto mb-2" style="width:72px;height:72px;font-size:1.4rem" th:text="${yo.iniciales()}"></div>
+        <h2 class="h5 mb-0" th:text="${perfil.nombre_completo}"></h2>
+        <div class="text-secondary">@<span th:text="${perfil.username}"></span></div>
+        <span class="estado mt-2" th:classappend="${fmt.claseEstado(perfil.rol)}" th:text="${fmt.etiqueta(perfil.rol)}"></span>
+        <p class="small text-secondary mt-2 mb-0" th:text="${perfil.rol_desc}"></p>
+        <hr>
+        <div class="small text-start">
+          <div class="d-flex justify-content-between py-1"><span class="text-secondary">Registro</span><b th:text="${fmt.fecha(perfil.fecha_registro)}"></b></div>
+          <div class="d-flex justify-content-between py-1"><span class="text-secondary">Último acceso</span><b th:text="${fmt.fechaHora(perfil.ultimo_acceso)}"></b></div>
+          <th:block th:if="${cliente != null}">
+            <div class="d-flex justify-content-between py-1"><span class="text-secondary">Documento</span><b th:text="${cliente.tipo_documento} + ' ' + ${cliente.numero_documento}"></b></div>
+            <div class="d-flex justify-content-between py-1"><span class="text-secondary">Tipo de cliente</span><b th:text="${fmt.etiqueta(cliente.tipo_cliente)}"></b></div>
+          </th:block>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <form class="tarjeta mb-3" method="post" th:action="@{/perfil}">
+        <div class="tarjeta-cab"><h2>Datos personales</h2></div>
+        <div class="tarjeta-cuerpo row g-3">
+          <div class="col-md-6"><label class="form-label">Nombre completo</label><input class="form-control" name="nombre_completo" th:value="${perfil.nombre_completo}" maxlength="120" required></div>
+          <div class="col-md-6"><label class="form-label">Correo</label><input class="form-control" name="email" type="email" th:value="${perfil.email}" required></div>
+          <div class="col-md-6"><label class="form-label">Teléfono</label><input class="form-control" name="telefono" th:value="${perfil.telefono}" required></div>
+          <th:block th:if="${cliente != null}">
+            <div class="col-md-6"><label class="form-label">Municipio</label>
+              <select class="form-select" name="id_municipio"><option th:each="m : ${municipios}" th:value="${m.id_municipio}" th:text="${m.nombre}" th:selected="${m.id_municipio == cliente.id_municipio}"></option></select></div>
+            <div class="col-12"><label class="form-label">Dirección de entrega</label><input class="form-control" name="direccion" th:value="${cliente.direccion}" maxlength="150"></div>
+          </th:block>
+        </div>
+        <div class="tarjeta-cab" style="border-top:1px solid var(--fm-borde);border-bottom:0;justify-content:flex-end"><button class="btn btn-primary">Guardar cambios</button></div>
+      </form>
+      <form class="tarjeta" method="post" th:action="@{/perfil/clave}">
+        <div class="tarjeta-cab"><h2>Cambiar contraseña</h2></div>
+        <div class="tarjeta-cuerpo row g-3">
+          <div class="col-md-4"><label class="form-label">Contraseña actual</label><input class="form-control" type="password" name="actual" required autocomplete="current-password"></div>
+          <div class="col-md-4"><label class="form-label">Nueva contraseña</label><input class="form-control" type="password" name="nueva" required autocomplete="new-password"></div>
+          <div class="col-md-4"><label class="form-label">Confirmar</label><input class="form-control" type="password" name="confirmar" required autocomplete="new-password"></div>
+        </div>
+        <div class="tarjeta-cab" style="border-top:1px solid var(--fm-borde);border-bottom:0;justify-content:flex-end"><button class="btn btn-outline-primary">Cambiar contraseña</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+</body>
+</html>

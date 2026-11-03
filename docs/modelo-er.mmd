@@ -1,0 +1,133 @@
+erDiagram
+    ROL ||--o{ USUARIO : "asigna"
+    USUARIO ||--o| CLIENTE : "cuenta de"
+    USUARIO ||--o| CAMPESINO : "cuenta de"
+    USUARIO ||--o| EMPLEADO : "cuenta de"
+    USUARIO ||--o{ NOTIFICACION : "recibe"
+    MUNICIPIO ||--o{ CLIENTE : "reside"
+    MUNICIPIO ||--o{ CAMPESINO : "reside"
+    MUNICIPIO ||--o{ FINCA : "ubica"
+    MUNICIPIO ||--o{ PUNTO_ACOPIO : "ubica"
+    CAMPESINO ||--|{ FINCA : "posee"
+    CATEGORIA ||--o{ PRODUCTO : "agrupa"
+    FINCA ||--o{ LOTE : "cosecha"
+    PRODUCTO ||--o{ LOTE : "es de"
+    PUNTO_ACOPIO ||--o{ LOTE : "almacena"
+    PUNTO_ACOPIO ||--o{ EMPLEADO : "emplea"
+    PUNTO_ACOPIO ||--o{ PEDIDO : "despacha"
+    CLIENTE ||--o{ PEDIDO : "hace"
+    CLIENTE ||--o{ SUSCRIPCION : "contrata"
+    PLAN ||--o{ SUSCRIPCION : "se contrata en"
+    SUSCRIPCION |o--o{ PEDIDO : "da descuento a"
+    PEDIDO ||--|{ DETALLE_PEDIDO : "contiene"
+    LOTE ||--o{ DETALLE_PEDIDO : "surte"
+    PEDIDO ||--o{ PAGO : "se paga con"
+    SUSCRIPCION ||--o{ PAGO : "se paga con"
+    METODO_PAGO ||--o{ PAGO : "medio"
+    PEDIDO ||--o| FACTURA : "genera"
+    PEDIDO ||--o| DESPACHO : "se envía en"
+    TRANSPORTADOR ||--o{ DESPACHO : "transporta"
+
+    MUNICIPIO { int id_municipio PK
+        varchar nombre
+        varchar departamento
+        char codigo_dane UK }
+    ROL { int id_rol PK
+        varchar nombre UK }
+    USUARIO { int id_usuario PK
+        int id_rol FK
+        varchar username UK
+        varchar password_hash
+        varchar email UK
+        datetime ultimo_acceso }
+    CAMPESINO { int id_campesino PK
+        int id_usuario FK
+        int id_municipio FK
+        varchar numero_documento UK
+        tinyint certificado_bpa }
+    FINCA { int id_finca PK
+        int id_campesino FK
+        int id_municipio FK
+        varchar vereda
+        decimal area_hectareas
+        int altitud_msnm }
+    CATEGORIA { int id_categoria PK
+        varchar nombre UK }
+    PRODUCTO { int id_producto PK
+        int id_categoria FK
+        varchar nombre
+        decimal precio_venta_kg
+        decimal iva_pct
+        int vida_util_dias }
+    PUNTO_ACOPIO { int id_punto PK
+        int id_municipio FK
+        decimal capacidad_kg
+        tinyint refrigerado }
+    EMPLEADO { int id_empleado PK
+        int id_punto FK
+        int id_usuario FK
+        varchar cargo
+        decimal salario }
+    TRANSPORTADOR { int id_transportador PK
+        char placa UK
+        decimal capacidad_kg
+        tinyint refrigerado }
+    CLIENTE { int id_cliente PK
+        int id_usuario FK
+        int id_municipio FK
+        varchar tipo_cliente
+        varchar numero_documento UK }
+    PLAN { int id_plan PK
+        varchar periodicidad
+        decimal precio
+        decimal descuento_pct }
+    METODO_PAGO { int id_metodo PK
+        varchar tipo
+        decimal comision_pct }
+    SUSCRIPCION { int id_suscripcion PK
+        int id_cliente FK
+        int id_plan FK
+        date fecha_inicio
+        date fecha_fin
+        varchar estado }
+    LOTE { int id_lote PK
+        varchar codigo UK
+        int id_finca FK
+        int id_producto FK
+        int id_punto FK
+        date fecha_vencimiento
+        decimal cantidad_disponible_kg
+        decimal precio_finca_kg }
+    PEDIDO { int id_pedido PK
+        int id_cliente FK
+        int id_punto FK
+        int id_suscripcion FK
+        datetime fecha_pedido
+        varchar estado
+        decimal total }
+    DETALLE_PEDIDO { int id_pedido PK,FK
+        int linea PK
+        int id_lote FK
+        decimal cantidad_kg
+        decimal precio_kg }
+    PAGO { int id_pago PK
+        int id_metodo FK
+        int id_pedido FK
+        int id_suscripcion FK
+        decimal valor
+        varchar referencia UK
+        varchar estado }
+    FACTURA { int id_factura PK
+        int id_pedido FK,UK
+        varchar numero UK
+        decimal total }
+    DESPACHO { int id_despacho PK
+        int id_pedido FK,UK
+        int id_transportador FK
+        varchar numero_guia UK
+        varchar estado }
+    NOTIFICACION { int id_notificacion PK
+        int id_usuario FK
+        varchar tipo
+        datetime fecha_programada
+        tinyint leida }

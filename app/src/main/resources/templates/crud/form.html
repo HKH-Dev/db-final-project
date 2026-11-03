@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title th:text="(${id} == null ? 'Registrar ' : 'Modificar ') + ${e.singular} + ' · FrutiMarket'">Formulario</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <div class="migas"><a href="/">Inicio</a> / <a th:href="@{/crud/{c}(c=${e.clave})}" th:text="${e.titulo}">Lista</a></div>
+      <h1><span th:text="${id == null} ? 'Registrar ' + ${e.singular} : 'Modificar ' + ${e.singular} + ' #' + ${id}">Formulario</span></h1>
+    </div>
+  </div>
+  <form class="tarjeta" method="post" th:action="@{/crud/{c}/guardar(c=${e.clave})}" novalidate>
+    <input type="hidden" name="id" th:value="${id}" th:if="${id != null}">
+    <div class="tarjeta-cuerpo">
+      <div class="row g-3">
+        <div th:each="c : ${e.campos}" th:class="${c.ancho or c.tipo.name() == 'TEXTO_LARGO'} ? 'col-12' : 'col-md-6 col-lg-4'">
+          <th:block th:with="val=${v[c.columna]}, err=${errores[c.columna]}">
+            <th:block th:if="${c.tipo.name() == 'BOOLEANO'}">
+              <div class="form-check form-switch mt-4">
+                <input class="form-check-input" type="checkbox" th:id="${c.columna}" th:name="${c.columna}" value="1" th:checked="${val != null}">
+                <label class="form-check-label fw-semibold" th:for="${c.columna}" th:text="${c.etiqueta}">Activo</label>
+              </div>
+            </th:block>
+            <th:block th:unless="${c.tipo.name() == 'BOOLEANO'}">
+              <label class="form-label" th:for="${c.columna}"><span th:text="${c.etiqueta}">Campo</span><span th:if="${c.requerido and !(c.tipo.name() == 'CLAVE' and id != null)}" class="text-danger"> *</span></label>
+              <select th:if="${c.tipo.name() == 'FK'}" class="form-select" th:classappend="${err != null} ? 'is-invalid'" th:id="${c.columna}" th:name="${c.columna}">
+                <option value="" th:text="${c.requerido} ? 'Seleccione…' : '— Ninguno —'"></option>
+                <option th:each="o : ${opciones[c.columna]}" th:value="${o.id}" th:text="${o.etiqueta}" th:selected="${val != null and o.id == val.toString()}"></option>
+              </select>
+              <select th:if="${c.tipo.name() == 'OPCIONES'}" class="form-select" th:classappend="${err != null} ? 'is-invalid'" th:id="${c.columna}" th:name="${c.columna}">
+                <option value="">Seleccione…</option>
+                <option th:each="o : ${c.opciones}" th:value="${o}" th:text="${fmt.etiqueta(o)}" th:selected="${val != null and o == val.toString()}"></option>
+              </select>
+              <textarea th:if="${c.tipo.name() == 'TEXTO_LARGO'}" class="form-control" rows="3" th:classappend="${err != null} ? 'is-invalid'"
+                        th:id="${c.columna}" th:name="${c.columna}" th:attr="maxlength=${c.max}" th:text="${val}"></textarea>
+              <input th:unless="${c.tipo.name() == 'FK' or c.tipo.name() == 'OPCIONES' or c.tipo.name() == 'TEXTO_LARGO'}" class="form-control"
+                     th:classappend="${err != null} ? 'is-invalid'" th:type="${c.inputType()}" th:id="${c.columna}" th:name="${c.columna}"
+                     th:value="${val}" th:attr="step=${c.paso()}, maxlength=${c.max > 0 ? c.max : null}, min=${c.minimo}" autocomplete="off">
+              <div class="invalid-feedback" th:if="${err != null}" th:text="${err}">error</div>
+              <div class="form-text" th:if="${c.ayuda != null and err == null}" th:text="${c.ayuda}">ayuda</div>
+            </th:block>
+          </th:block>
+        </div>
+      </div>
+    </div>
+    <div class="tarjeta-cab" style="border-top:1px solid var(--fm-borde);border-bottom:0;justify-content:flex-end">
+      <a class="btn btn-light" th:href="${id == null} ? @{/crud/{c}(c=${e.clave})} : @{/crud/{c}/{i}(c=${e.clave}, i=${id})}">Cancelar</a>
+      <button class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Guardar</button>
+    </div>
+  </form>
+</section>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title th:text="'Guía ' + ${g.numero_guia}">Guía</title>
+  <style th:replace="~{pdf/estilos :: css(false)}"></style>
+</head>
+<body>
+<table class="cab"><tr>
+  <td style="width:38pt"><div class="logo">F</div></td>
+  <td><div class="empresa" th:text="${empresa.razon}"></div><div class="peq gris">NIT <span th:text="${empresa.nit}"></span> · Tel. <span th:text="${empresa.telefono}"></span></div></td>
+  <td style="text-align:right" class="peq gris">GUÍA DE DESPACHO / REMISIÓN<br/><b style="font-size:13pt;color:#145a37" th:text="${g.numero_guia}"></b><br/>Pedido N.º <span th:text="${g.id_pedido}"></span></td>
+</tr></table>
+<table style="width:100%;margin-bottom:8pt"><tr>
+  <td style="width:49%;vertical-align:top" class="caja">
+    <div class="peq gris">ORIGEN</div><b th:text="${g.punto}"></b><div class="peq" th:text="${g.dir_punto}"></div>
+    <div class="peq" style="margin-top:4pt"><b>Salida: </b><span th:text="${fmt.fechaHora(g.fecha_salida)}"></span></div>
+  </td><td style="width:2%"></td>
+  <td style="vertical-align:top" class="caja">
+    <div class="peq gris">DESTINO</div><b th:text="${g.cliente}"></b>
+    <div class="peq" th:text="${g.direccion_entrega} + ', ' + ${g.municipio}"></div><div class="peq" th:text="'Tel. ' + ${g.telefono}"></div>
+    <div class="peq" style="margin-top:4pt"><b>Entrega programada: </b><span th:text="${fmt.fecha(g.fecha_entrega_programada)}"></span></div>
+  </td>
+</tr></table>
+<h2>Transporte</h2>
+<table class="datos">
+  <tr><td style="width:30%"><b>Transportador</b></td><td th:text="${g.transportador} + ' · ' + ${g.doc_transportador}"></td></tr>
+  <tr><td><b>Vehículo</b></td><td th:text="${g.tipo_vehiculo} + ' · placa ' + ${g.placa} + (${fmt.si(g.refrigerado)} ? ' · refrigerado' : '')"></td></tr>
+  <tr><td><b>Teléfono</b></td><td th:text="${g.tel_transportador}"></td></tr>
+  <tr><td><b>Temperatura de la carga</b></td><td th:text="${g.temperatura_c != null} ? ${g.temperatura_c} + ' °C' : 'No aplica (ambiente)'"></td></tr>
+  <tr><td><b>Estado</b></td><td th:text="${fmt.etiqueta(g.estado)} + (${g.fecha_entrega != null} ? ' el ' + ${fmt.fechaHora(g.fecha_entrega)} : '')"></td></tr>
+</table>
+<h2>Mercancía (<span th:text="${fmt.kg(g.kg_total)}"></span>)</h2>
+<table class="datos">
+  <thead><tr><th>#</th><th>Producto</th><th>Lote</th><th>Origen</th><th>Conservación</th><th class="num">Kilos</th><th>Recibido</th></tr></thead>
+  <tbody><tr th:each="l : ${lineas}">
+    <td th:text="${l.linea}"></td><td th:text="${l.producto}"></td><td th:text="${l.lote}"></td>
+    <td class="peq" th:text="${l.finca} + ', ' + ${l.municipio}"></td>
+    <td th:text="${fmt.si(l.requiere_refrigeracion)} ? 'Refrigerado 2-8 °C' : 'Ambiente'"></td>
+    <td class="num" th:text="${fmt.kg(l.cantidad_kg)}"></td><td>[    ]</td>
+  </tr></tbody>
+</table>
+<p class="peq" th:if="${g.observaciones != null}"><b>Observaciones del pedido: </b><span th:text="${g.observaciones}"></span></p>
+<table class="firma"><tr>
+  <td><div class="linea-firma">Entrega · <span th:text="${g.transportador}"></span></div></td>
+  <td><div class="linea-firma">Recibe · Nombre, cédula y firma</div></td>
+</tr></table>
+</body>
+</html>

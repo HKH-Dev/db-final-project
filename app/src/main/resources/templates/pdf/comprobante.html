@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title th:text="'Comprobante ' + ${p.referencia}">Comprobante</title>
+  <style th:replace="~{pdf/estilos :: css(false)}"></style>
+</head>
+<body>
+<table class="cab"><tr>
+  <td style="width:38pt"><div class="logo">F</div></td>
+  <td><div class="empresa" th:text="${empresa.razon}"></div><div class="peq gris">NIT <span th:text="${empresa.nit}"></span> · <span th:text="${empresa.direccion}"></span></div></td>
+  <td style="text-align:right" class="peq gris">COMPROBANTE DE PAGO<br/><b style="font-size:12pt;color:#145a37" th:text="'N.º ' + ${p.id_pago}"></b></td>
+</tr></table>
+<table style="width:100%"><tr>
+  <td style="width:62%;vertical-align:top">
+    <h1 th:text="${fmt.moneda(p.valor)}">$</h1>
+    <div class="gris" th:text="${p.concepto}"></div>
+  </td>
+  <td style="vertical-align:top">
+    <div class="sello" th:classappend="${p.estado != 'APROBADO'} ? 'sello-rojo'">PAGO <span th:text="${#strings.toUpperCase(fmt.etiqueta(p.estado))}"></span></div>
+  </td>
+</tr></table>
+<h2>Detalle de la transacción</h2>
+<table class="datos">
+  <tr><td style="width:35%"><b>Fecha y hora</b></td><td th:text="${fmt.fechaHora(p.fecha_pago)}"></td></tr>
+  <tr><td><b>Pagador</b></td><td th:text="${p.cliente} + ' · ' + ${p.documento}"></td></tr>
+  <tr><td><b>Correo</b></td><td th:text="${p.email}"></td></tr>
+  <tr><td><b>Medio de pago</b></td><td th:text="${p.metodo}"></td></tr>
+  <tr><td><b>Referencia de la pasarela</b></td><td th:text="${p.referencia}"></td></tr>
+  <tr><td><b>Concepto</b></td><td th:text="${p.concepto}"></td></tr>
+  <tr th:if="${p.factura != null}"><td><b>Factura asociada</b></td><td th:text="${p.factura}"></td></tr>
+  <tr><td><b>Valor</b></td><td><b th:text="${fmt.moneda(p.valor)}"></b></td></tr>
+  <tr><td><b>Estado</b></td><td th:text="${fmt.etiqueta(p.estado)}"></td></tr>
+</table>
+<div class="caja peq" style="margin-top:14pt">Conserve este comprobante. Para reclamos escriba a <span th:text="${empresa.email}"></span> indicando la referencia.
+  Comprobante generado el <span th:text="${fmt.fechaHora(generado)}"></span>.</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title th:text="${e.titulo} + ' · FrutiMarket'">Lista</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <div class="migas"><a href="/">Inicio</a> / <span th:text="${e.grupo}">Grupo</span></div>
+      <h1><i th:class="'bi bi-' + ${e.icono} + ' me-2 text-success'"></i><span th:text="${e.titulo}">Entidad</span></h1>
+      <p th:if="${!#strings.isEmpty(e.descripcion)}" th:text="${e.descripcion}">desc</p>
+    </div>
+    <a th:if="${e.crear}" class="btn btn-primary" th:href="@{/crud/{c}/nuevo(c=${e.clave})}"><i class="bi bi-plus-lg me-1"></i>Registrar <span th:text="${e.singular}"></span></a>
+  </div>
+  <div class="tarjeta">
+    <div class="tarjeta-cab">
+      <form class="d-flex gap-2" method="get" th:action="@{/crud/{c}(c=${e.clave})}" style="max-width:420px;width:100%">
+        <input class="form-control form-control-sm" type="search" name="q" th:value="${q}" placeholder="Buscar en todos los campos…">
+        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-search"></i></button>
+      </form>
+      <span class="text-secondary small"><b th:text="${fmt.entero(pag.total)}">0</b> registros</span>
+    </div>
+    <div class="tabla-scroll">
+      <table class="tabla-fm">
+        <thead><tr>
+          <th th:each="c : ${e.columnasLista}" th:class="${c.numerica()} ? 'num'">
+            <a th:href="@{/crud/{k}(k=${e.clave}, q=${q}, orden=${c.clave}, desc=${orden == c.clave and !desc})}">
+              <span th:text="${c.etiqueta}">Col</span>
+              <i th:if="${orden == c.clave}" th:class="${desc} ? 'bi bi-caret-down-fill' : 'bi bi-caret-up-fill'"></i>
+            </a>
+          </th>
+          <th></th>
+        </tr></thead>
+        <tbody>
+          <tr th:each="f : ${pag.filas}" class="fila-click" th:attr="data-href=@{/crud/{k}/{id}(k=${e.clave}, id=${f['id']})}">
+            <th:block th:each="c : ${e.columnasLista}"><td th:replace="~{fragments/celda :: td(${f[c.clave]}, ${c})}"></td></th:block>
+            <td class="text-end text-nowrap">
+              <a class="btn btn-sm btn-light" th:href="@{/crud/{k}/{id}(k=${e.clave}, id=${f['id']})}" title="Ver"><i class="bi bi-eye"></i></a>
+              <a th:if="${e.editar and e.urlDetalle == null}" class="btn btn-sm btn-light" th:href="@{/crud/{k}/{id}/editar(k=${e.clave}, id=${f['id']})}" title="Modificar"><i class="bi bi-pencil"></i></a>
+            </td>
+          </tr>
+          <tr th:if="${pag.filas.isEmpty()}"><td th:colspan="${e.columnasLista.size() + 1}"><div class="vacio"><i class="bi bi-inbox"></i>No hay registros que coincidan.</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tarjeta-cab" style="border-top:1px solid var(--fm-borde);border-bottom:0" th:if="${pag.paginas() > 1}">
+      <span class="small text-secondary">Página <b th:text="${pag.pagina}"></b> de <b th:text="${pag.paginas()}"></b></span>
+      <div class="paginacion">
+        <a th:if="${pag.pagina > 1}" th:href="@{/crud/{k}(k=${e.clave}, q=${q}, orden=${orden}, desc=${desc}, pagina=${pag.pagina - 1})}">‹ Anterior</a>
+        <th:block th:each="n : ${#numbers.sequence(pag.desde(), pag.hasta())}">
+          <span th:if="${n == pag.pagina}" class="actual" th:text="${n}">1</span>
+          <a th:unless="${n == pag.pagina}" th:href="@{/crud/{k}(k=${e.clave}, q=${q}, orden=${orden}, desc=${desc}, pagina=${n})}" th:text="${n}">2</a>
+        </th:block>
+        <a th:if="${pag.pagina < pag.paginas()}" th:href="@{/crud/{k}(k=${e.clave}, q=${q}, orden=${orden}, desc=${desc}, pagina=${pag.pagina + 1})}">Siguiente ›</a>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

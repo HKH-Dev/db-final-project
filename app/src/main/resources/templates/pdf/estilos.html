@@ -1,0 +1,35 @@
+<!-- Estilos comunes de los documentos PDF (openhtmltopdf). Usar XHTML bien formado. -->
+<style th:fragment="css(horizontal)" xmlns:th="http://www.thymeleaf.org" th:inline="text">
+  @page { size: A4 [[${horizontal ? 'landscape' : 'portrait'}]]; margin: 16mm 14mm 18mm 14mm;
+    @bottom-left { content: "FrutiMarket Quindío S.A.S. · NIT 901.482.733-5"; font-family: 'DejaVu Sans'; font-size: 7.5pt; color: #8a968e; }
+    @bottom-right { content: "Página " counter(page) " de " counter(pages); font-family: 'DejaVu Sans'; font-size: 7.5pt; color: #8a968e; } }
+  body { font-family: 'DejaVu Sans', sans-serif; font-size: 8.6pt; color: #1f2a24; }
+  .cab { width: 100%; border-bottom: 2.5pt solid #1f7a4d; padding-bottom: 8pt; margin-bottom: 12pt; }
+  .cab td { vertical-align: top; }
+  .logo { width: 30pt; height: 30pt; border-radius: 9pt; background: #f28c28; color: #fff; text-align: center; font-weight: bold; font-size: 15pt; line-height: 30pt; }
+  .empresa { font-size: 12pt; font-weight: bold; color: #145a37; }
+  .gris { color: #66756b; }
+  .peq { font-size: 7.4pt; }
+  h1 { font-size: 14.5pt; margin: 0 0 2pt 0; color: #1f2a24; }
+  h2 { font-size: 10pt; margin: 12pt 0 5pt 0; color: #145a37; }
+  .nivel { display: inline-block; font-size: 6.8pt; font-weight: bold; padding: 2pt 6pt; border-radius: 3pt; letter-spacing: .5pt; }
+  .nivel-SIMPLE { background: #e6eef7; color: #2d5a8a; } .nivel-INTERMEDIO { background: #fdf0e3; color: #b25a07; } .nivel-COMPLEJO { background: #f8e6ef; color: #8a2453; }
+  .caja { background: #f5f6f1; border-radius: 5pt; padding: 7pt 9pt; margin-bottom: 9pt; }
+  table.datos { width: 100%; border-collapse: collapse; -fs-table-paginate: paginate; }
+  table.datos th { background: #1f7a4d; color: #fff; font-size: 7.2pt; text-transform: uppercase; text-align: left; padding: 5pt 5pt; }
+  table.datos td { padding: 4.2pt 5pt; border-bottom: 0.5pt solid #e3e7e1; }
+  table.datos tr:nth-child(even) td { background: #f8f9f6; }
+  table.datos tfoot td { font-weight: bold; background: #e7f3ec; border-top: 1.2pt solid #1f7a4d; }
+  .num { text-align: right; white-space: nowrap; }
+  .estado { font-size: 7pt; font-weight: bold; padding: 1pt 4pt; border-radius: 6pt; background: #eef1ec; }
+  .grafico { text-align: center; margin: 4pt 0 10pt 0; }
+  .grafico img { width: 100%; }
+  .firma { margin-top: 34pt; width: 100%; }
+  .firma td { width: 50%; padding: 0 14pt; text-align: center; }
+  .linea-firma { border-top: 0.8pt solid #66756b; padding-top: 3pt; }
+  .totales { width: 46%; margin-left: 54%; border-collapse: collapse; margin-top: 8pt; }
+  .totales td { padding: 3.5pt 6pt; }
+  .totales .gran td { font-size: 11pt; font-weight: bold; color: #fff; background: #1f7a4d; }
+  .sello { border: 1.5pt solid #1f7a4d; color: #1f7a4d; border-radius: 6pt; padding: 6pt 10pt; font-weight: bold; text-align: center; }
+  .sello-rojo { border-color: #a5283b; color: #a5283b; }
+</style>

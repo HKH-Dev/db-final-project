@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Certificado de suscripción</title>
+  <style th:replace="~{pdf/estilos :: css(false)}"></style>
+</head>
+<body>
+<table class="cab"><tr>
+  <td style="width:38pt"><div class="logo">F</div></td>
+  <td><div class="empresa" th:text="${empresa.razon}"></div><div class="peq gris">NIT <span th:text="${empresa.nit}"></span> · <span th:text="${empresa.direccion}"></span></div></td>
+  <td style="text-align:right" class="peq gris">CERTIFICADO DE SUSCRIPCIÓN<br/><b style="font-size:12pt;color:#145a37" th:text="'N.º ' + ${s.id_suscripcion}"></b></td>
+</tr></table>
+<p style="margin-top:14pt">Armenia, <span th:text="${fmt.fechaLarga(generado)}"></span></p>
+<h1 style="margin-top:12pt">FrutiMarket Quindío S.A.S. certifica que:</h1>
+<p style="font-size:10pt;line-height:1.6">
+  <b th:text="${s.cliente}"></b>, identificado(a) con <b th:text="${s.documento}"></b>, con domicilio en
+  <span th:text="${s.direccion} + ', ' + ${s.municipio}"></span>, tiene contratado el plan <b th:text="${s.plan}"></b>
+  de periodicidad <span th:text="${#strings.toLowerCase(s.periodicidad)}"></span>, vigente desde el <b th:text="${fmt.fechaLarga(s.fecha_inicio)}"></b>
+  hasta el <b th:text="${fmt.fechaLarga(s.fecha_fin)}"></b>, en estado <b th:text="${fmt.etiqueta(s.estado)}"></b>.
+</p>
+<div class="caja">
+  <div><b>Incluye: </b><span th:text="${s.descripcion}"></span></div>
+  <div class="peq" style="margin-top:3pt"><b>Valor por periodo: </b><span th:text="${fmt.moneda(s.precio)}"></span> ·
+    <b>Kilos incluidos: </b><span th:text="${fmt.kg(s.kg_incluidos)}"></span> · <b>Descuento en pedidos: </b><span th:text="${fmt.porcentaje(s.descuento_pct)}"></span> ·
+    <b>Renovación automática: </b><span th:text="${fmt.siNo(s.renovacion_automatica)}"></span></div>
+</div>
+<h2>Pagos registrados</h2>
+<table class="datos">
+  <thead><tr><th>Fecha</th><th>Medio</th><th>Referencia</th><th>Estado</th><th class="num">Valor</th></tr></thead>
+  <tbody><tr th:each="p : ${pagos}"><td th:text="${fmt.fechaHora(p.fecha_pago)}"></td><td th:text="${p.metodo}"></td><td th:text="${p.referencia}"></td>
+    <td th:text="${fmt.etiqueta(p.estado)}"></td><td class="num" th:text="${fmt.moneda(p.valor)}"></td></tr></tbody>
+</table>
+<table class="firma"><tr><td></td><td><div class="linea-firma">Dirección comercial<br/>FrutiMarket Quindío S.A.S.</div></td></tr></table>
+</body>
+</html>

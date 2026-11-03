@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Inicio · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <h1>Hola, <span th:text="${#strings.arraySplit(yo.nombre, ' ')[0]}">Laura</span> 🍓</h1>
+      <p>Fruta fresca de fincas del Quindío, con trazabilidad hasta la vereda donde se cosechó.</p>
+    </div>
+    <a class="btn btn-primary btn-lg" href="/pedidos/nuevo"><i class="bi bi-cart-plus me-1"></i>Hacer un pedido</a>
+  </div>
+  <div class="row g-3" th:if="${resumen != null}">
+    <div class="col-md-4"><div class="tarjeta kpi">
+      <div class="etq"><span class="ico ico-verde"><i class="bi bi-bag-check"></i></span>Pedidos este año</div>
+      <div class="val" th:text="${resumen.pedidos}">0</div>
+      <div class="sub">por <span th:text="${fmt.moneda(resumen.total)}"></span></div></div></div>
+    <div class="col-md-4"><div class="tarjeta kpi">
+      <div class="etq"><span class="ico ico-naranja"><i class="bi bi-piggy-bank"></i></span>Ahorro con tu plan</div>
+      <div class="val" th:text="${fmt.moneda(resumen.ahorro)}">$</div>
+      <div class="sub">descuentos aplicados en tus pedidos</div></div></div>
+    <div class="col-md-4"><div class="tarjeta kpi">
+      <div class="etq"><span class="ico ico-mora"><i class="bi bi-box2-heart"></i></span>Mi plan</div>
+      <th:block th:if="${plan != null}">
+        <div class="val fs-5 mt-2" th:text="${plan.nombre}">Plan</div>
+        <div class="sub">Vigente hasta el <b th:text="${fmt.fecha(plan.fecha_fin)}"></b> · <span th:text="${fmt.porcentaje(plan.descuento_pct)} + ' de descuento'"></span></div>
+      </th:block>
+      <th:block th:if="${plan == null}"><div class="val fs-6 mt-2">Sin plan activo</div><a href="/planes" class="sub">Conoce las canastas →</a></th:block>
+    </div></div>
+  </div>
+  <div class="row g-3 mt-0">
+    <div class="col-lg-7"><div class="tarjeta h-100">
+      <div class="tarjeta-cab"><h2>Mis últimos pedidos</h2><a href="/mis-pedidos" class="small">Ver todos →</a></div>
+      <div class="tabla-scroll"><table class="tabla-fm">
+        <thead><tr><th>N.º</th><th>Fecha</th><th>Estado</th><th class="num">Total</th></tr></thead>
+        <tbody>
+          <tr th:each="p : ${pedidos}" class="fila-click" th:attr="data-href=@{/pedidos/{i}(i=${p.id_pedido})}">
+            <td th:text="${p.id_pedido}"></td><td th:text="${fmt.fechaHora(p.fecha_pedido)}"></td>
+            <td><span class="estado" th:classappend="${fmt.claseEstado(p.estado)}" th:text="${fmt.etiqueta(p.estado)}"></span></td>
+            <td class="num" th:text="${fmt.moneda(p.total)}"></td></tr>
+          <tr th:if="${pedidos == null or pedidos.isEmpty()}"><td colspan="4"><div class="vacio"><i class="bi bi-basket"></i>Aún no tienes pedidos.</div></td></tr>
+        </tbody></table></div>
+    </div></div>
+    <div class="col-lg-5"><div class="tarjeta h-100">
+      <div class="tarjeta-cab"><h2>Avisos sin leer</h2><a href="/notificaciones" class="small">Todos →</a></div>
+      <div th:each="a : ${avisos}" class="notif no-leida"><div><div class="notif-tit fw-semibold" th:text="${a.titulo}"></div>
+        <div class="small text-secondary" th:text="${a.mensaje}"></div><small class="text-secondary" th:text="${fmt.fechaHora(a.fecha_programada)}"></small></div></div>
+      <div class="vacio" th:if="${avisos == null or avisos.isEmpty()}"><i class="bi bi-bell-slash"></i>Estás al día.</div>
+    </div></div>
+  </div>
+</section>
+</body>
+</html>

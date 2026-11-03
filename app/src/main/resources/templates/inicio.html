@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Inicio · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <h1>Hola, <span th:text="${#strings.arraySplit(yo.nombre, ' ')[0]}">Kevin</span> 👋</h1>
+      <p>Así va FrutiMarket hoy. Los datos se calculan en vivo desde MariaDB.</p>
+    </div>
+    <div class="d-flex gap-2">
+      <a class="btn btn-light" href="/reportes"><i class="bi bi-file-earmark-bar-graph me-1"></i>Reportes</a>
+      <a class="btn btn-primary" href="/pedidos/nuevo"><i class="bi bi-cart-plus me-1"></i>Nuevo pedido</a>
+    </div>
+  </div>
+  <div class="row g-3 mb-3">
+    <div class="col-sm-6 col-xl-3"><div class="tarjeta kpi">
+      <div class="etq"><span class="ico ico-verde"><i class="bi bi-cash-stack"></i></span>Ventas del mes</div>
+      <div class="val" th:text="${fmt.moneda(kpi.ventas_mes)}">$</div>
+      <div class="sub">Mes anterior: <span th:text="${fmt.moneda(kpi.ventas_mes_anterior)}"></span></div>
+    </div></div>
+    <div class="col-sm-6 col-xl-3"><div class="tarjeta kpi">
+      <div class="etq"><span class="ico ico-naranja"><i class="bi bi-bag-check"></i></span>Pedidos (30 días)</div>
+      <div class="val" th:text="${fmt.entero(kpi.pedidos_30)}">0</div>
+      <div class="sub"><span th:text="${kpi.pedidos_abiertos}"></span> abiertos por pagar, despachar o entregar</div>
+    </div></div>
+    <div class="col-sm-6 col-xl-3"><div class="tarjeta kpi">
+      <div class="etq"><span class="ico ico-azul"><i class="bi bi-boxes"></i></span>Inventario vigente</div>
+      <div class="val" th:text="${fmt.kg(kpi.kg_inventario)}">0</div>
+      <div class="sub"><a href="/reportes/lotes-por-vencer" class="text-danger fw-semibold"><span th:text="${kpi.lotes_por_vencer}"></span> lotes vencen en 3 días</a></div>
+    </div></div>
+    <div class="col-sm-6 col-xl-3"><div class="tarjeta kpi">
+      <div class="etq"><span class="ico ico-mora"><i class="bi bi-arrow-repeat"></i></span>Planes activos</div>
+      <div class="val" th:text="${kpi.planes_activos}">0</div>
+      <div class="sub"><span th:text="${kpi.clientes}"></span> clientes activos</div>
+    </div></div>
+  </div>
+  <div class="row g-3">
+    <div class="col-xl-8">
+      <div class="tarjeta h-100">
+        <div class="tarjeta-cab"><h2>Ventas diarias · últimos 30 días</h2><a href="/reportes/ventas-mensuales" class="small">Ver mes a mes →</a></div>
+        <div class="tarjeta-cuerpo"><div class="grafico-caja" style="height:290px"><canvas id="g30"></canvas></div></div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="tarjeta h-100">
+        <div class="tarjeta-cab"><h2>Más vendidos · 30 días</h2></div>
+        <div class="tarjeta-cuerpo pt-2">
+          <div th:each="t, st : ${topProductos}" class="d-flex justify-content-between align-items-center py-2" th:classappend="${!st.last} ? 'border-bottom'">
+            <div><b class="d-block" th:text="${t.producto}"></b><small class="text-secondary" th:text="${fmt.kg(t.kg)}"></small></div>
+            <b th:text="${fmt.moneda(t.ventas)}"></b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="tarjeta">
+        <div class="tarjeta-cab"><h2>Últimos pedidos</h2><a href="/crud/pedidos" class="small">Ver todos →</a></div>
+        <div class="tabla-scroll"><table class="tabla-fm">
+          <thead><tr><th>N.º</th><th>Fecha</th><th>Cliente</th><th>Estado</th><th class="num">Total</th></tr></thead>
+          <tbody><tr th:each="p : ${ultimos}" class="fila-click" th:attr="data-href=@{/pedidos/{i}(i=${p.id_pedido})}">
+            <td th:text="${p.id_pedido}"></td><td th:text="${fmt.fechaHora(p.fecha_pedido)}"></td><td th:text="${p.cliente}"></td>
+            <td><span class="estado" th:classappend="${fmt.claseEstado(p.estado)}" th:text="${fmt.etiqueta(p.estado)}"></span></td>
+            <td class="num" th:text="${fmt.moneda(p.total)}"></td>
+          </tr></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+  <script th:inline="javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      const s = /*[[${serie}]]*/ [];
+      fmGrafico('g30', { tipo: 'bar', formato: 'MONEDA',
+        etiquetas: s.map(x => { const d = new Date(String(x.dia).substring(0, 10) + 'T12:00:00'); return d.toLocaleDateString('es-CO', { day: 'numeric', month: 'short' }); }),
+        series: [{ nombre: 'Ventas', datos: s.map(x => Number(x.ventas)) }] });
+    });
+  </script>
+</section>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title th:text="${e.singular} + ' #' + ${id} + ' · FrutiMarket'">Detalle</title></head>
+<body>
+<section>
+  <div class="titulo-pagina">
+    <div>
+      <div class="migas"><a href="/">Inicio</a> / <a th:href="@{/crud/{c}(c=${e.clave})}" th:text="${e.titulo}">Lista</a></div>
+      <h1 class="text-capitalize"><span th:text="${e.singular}">Entidad</span> <span class="text-secondary">#<span th:text="${id}"></span></span></h1>
+    </div>
+    <div class="d-flex gap-2 flex-wrap">
+      <a th:if="${e.clave == 'pagos'}" class="btn btn-outline-primary" th:href="@{/documentos/comprobante/{i}(i=${id})}" target="_blank"><i class="bi bi-file-pdf me-1"></i>Comprobante</a>
+      <a th:if="${e.clave == 'facturas'}" class="btn btn-outline-primary" th:href="@{/documentos/factura/{i}(i=${fila['pedido']})}" target="_blank"><i class="bi bi-file-pdf me-1"></i>Factura PDF</a>
+      <a th:if="${e.clave == 'despachos'}" class="btn btn-outline-primary" th:href="@{/documentos/guia/{i}(i=${id})}" target="_blank"><i class="bi bi-file-pdf me-1"></i>Guía de despacho</a>
+      <a th:if="${e.clave == 'suscripciones'}" class="btn btn-outline-primary" th:href="@{/documentos/certificado/{i}(i=${id})}" target="_blank"><i class="bi bi-file-pdf me-1"></i>Certificado</a>
+      <a th:if="${e.editar}" class="btn btn-primary" th:href="@{/crud/{c}/{i}/editar(c=${e.clave}, i=${id})}"><i class="bi bi-pencil me-1"></i>Modificar</a>
+      <form th:if="${e.eliminar}" method="post" th:action="@{/crud/{c}/{i}/eliminar(c=${e.clave}, i=${id})}"
+            data-confirmar="¿Eliminar este registro? Esta acción no se puede deshacer.">
+        <button class="btn btn-outline-danger"><i class="bi bi-trash me-1"></i>Eliminar</button>
+      </form>
+    </div>
+  </div>
+  <div class="tarjeta">
+    <dl class="ficha m-0">
+      <div th:each="c : ${e.columnas}">
+        <dt th:text="${c.etiqueta}">Etiqueta</dt>
+        <dd>
+          <span th:if="${c.formato.name() == 'ESTADO' and fila[c.clave] != null}" class="estado" th:classappend="${fmt.claseEstado(fila[c.clave])}" th:text="${fmt.etiqueta(fila[c.clave])}"></span>
+          <span th:unless="${c.formato.name() == 'ESTADO'}" th:text="${fmt.valor(fila[c.clave], c.formato)}">valor</span>
+        </dd>
+      </div>
+    </dl>
+  </div>
+  <a class="btn btn-link mt-3 px-0" th:href="@{/crud/{c}(c=${e.clave})}"><i class="bi bi-arrow-left"></i> Volver a <span th:text="${#strings.toLowerCase(e.titulo)}"></span></a>
+</section>
+</body>
+</html>

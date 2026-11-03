@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head><title>Mis pedidos · FrutiMarket</title></head>
+<body>
+<section>
+  <div class="titulo-pagina"><div><div class="migas"><a href="/">Inicio</a> / Mis pedidos</div><h1>Mis pedidos</h1></div>
+    <a class="btn btn-primary" href="/pedidos/nuevo"><i class="bi bi-cart-plus me-1"></i>Nuevo pedido</a></div>
+  <div class="tarjeta"><div class="tabla-scroll"><table class="tabla-fm">
+    <thead><tr><th>N.º</th><th>Fecha</th><th>Punto</th><th>Entrega</th><th class="num">Productos</th><th>Estado</th><th class="num">Total</th><th></th></tr></thead>
+    <tbody>
+      <tr th:each="p : ${pedidos}" class="fila-click" th:attr="data-href=@{/pedidos/{i}(i=${p.id_pedido})}">
+        <td th:text="${p.id_pedido}"></td><td th:text="${fmt.fechaHora(p.fecha_pedido)}"></td><td th:text="${p.punto}"></td>
+        <td th:text="${fmt.fecha(p.fecha_entrega_programada)}"></td><td class="num" th:text="${p.lineas}"></td>
+        <td><span class="estado" th:classappend="${fmt.claseEstado(p.estado)}" th:text="${fmt.etiqueta(p.estado)}"></span></td>
+        <td class="num" th:text="${fmt.moneda(p.total)}"></td>
+        <td class="text-end"><a th:if="${p.estado == 'PENDIENTE'}" class="btn btn-sm btn-naranja" th:href="@{/pagos/pedido/{i}(i=${p.id_pedido})}">Pagar</a></td>
+      </tr>
+      <tr th:if="${pedidos.isEmpty()}"><td colspan="8"><div class="vacio"><i class="bi bi-basket"></i>Aún no tiene pedidos.</div></td></tr>
+    </tbody></table></div></div>
+</section>
+</body>
+</html>
