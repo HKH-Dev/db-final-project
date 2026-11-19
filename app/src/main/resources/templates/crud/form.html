@@ -6,7 +6,7 @@
   <div class="titulo-pagina">
     <div>
       <div class="migas"><a href="/">Inicio</a> / <a th:href="@{/crud/{c}(c=${e.clave})}" th:text="${e.titulo}">Lista</a></div>
-      <h1><span th:text="${id == null} ? 'Registrar ' + ${e.singular} : 'Modificar ' + ${e.singular} + ' #' + ${id}">Formulario</span></h1>
+      <h1><span th:text="${id == null} ? 'Registrar ' + ${e.singular} : 'Modificar ' + ${e.singular} + (${e.pkNatural} ? ': ' : ' #') + ${id}">Formulario</span></h1>
     </div>
   </div>
   <form class="tarjeta" method="post" th:action="@{/crud/{c}/guardar(c=${e.clave})}" novalidate>
@@ -35,7 +35,8 @@
                         th:id="${c.columna}" th:name="${c.columna}" th:attr="maxlength=${c.max}" th:text="${val}"></textarea>
               <input th:unless="${c.tipo.name() == 'FK' or c.tipo.name() == 'OPCIONES' or c.tipo.name() == 'TEXTO_LARGO'}" class="form-control"
                      th:classappend="${err != null} ? 'is-invalid'" th:type="${c.inputType()}" th:id="${c.columna}" th:name="${c.columna}"
-                     th:value="${val}" th:attr="step=${c.paso()}, maxlength=${c.max > 0 ? c.max : null}, min=${c.minimo}" autocomplete="off">
+                     th:value="${val}" th:attr="step=${c.paso()}, maxlength=${c.max > 0 ? c.max : null}, min=${c.minimo}"
+                     th:readonly="${e.pkNatural and id != null and c.columna == e.pk}" autocomplete="off">
               <div class="invalid-feedback" th:if="${err != null}" th:text="${err}">error</div>
               <div class="form-text" th:if="${c.ayuda != null and err == null}" th:text="${c.ayuda}">ayuda</div>
             </th:block>

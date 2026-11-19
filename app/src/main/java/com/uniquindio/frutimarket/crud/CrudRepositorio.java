@@ -57,12 +57,12 @@ public class CrudRepositorio {
         return new Pagina(filas, total, pagina, tamano);
     }
 
-    public Optional<Map<String, Object>> fila(Entidad e, long id) {
+    public Optional<Map<String, Object>> fila(Entidad e, String id) {
         List<Map<String, Object>> r = jdbc.queryForList("SELECT * FROM (" + e.getSqlLista() + ") t WHERE t.id = :id", Map.of("id", id));
         return r.stream().findFirst();
     }
 
-    public Optional<Map<String, Object>> registro(Entidad e, long id) {
+    public Optional<Map<String, Object>> registro(Entidad e, String id) {
         List<Map<String, Object>> r = jdbc.queryForList("SELECT * FROM " + e.getTabla() + " WHERE " + e.getPk() + " = :id", Map.of("id", id));
         return r.stream().findFirst();
     }
@@ -77,13 +77,20 @@ public class CrudRepositorio {
         return n == null ? 0 : n.longValue();
     }
 
-    public void actualizar(Entidad e, long id, Map<String, Object> valores) {
+    /** Catalogos con llave natural: la llave viene en los valores, no se genera. */
+    public void insertarSinClave(Entidad e, Map<String, Object> valores) {
+        String cols = String.join(", ", valores.keySet());
+        String params = valores.keySet().stream().map(k -> ":" + k).collect(Collectors.joining(", "));
+        jdbc.update("INSERT INTO " + e.getTabla() + " (" + cols + ") VALUES (" + params + ")", new MapSqlParameterSource(valores));
+    }
+
+    public void actualizar(Entidad e, String id, Map<String, Object> valores) {
         String set = valores.keySet().stream().map(k -> k + " = :" + k).collect(Collectors.joining(", "));
         MapSqlParameterSource p = new MapSqlParameterSource(valores).addValue("__id", id);
         jdbc.update("UPDATE " + e.getTabla() + " SET " + set + " WHERE " + e.getPk() + " = :__id", p);
     }
 
-    public void eliminar(Entidad e, long id) {
+    public void eliminar(Entidad e, String id) {
         jdbc.update("DELETE FROM " + e.getTabla() + " WHERE " + e.getPk() + " = :id", Map.of("id", id));
     }
 

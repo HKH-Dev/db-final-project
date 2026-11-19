@@ -8,7 +8,7 @@ adaptado al caso de estudio de la asignatura de Bases de Datos (Universidad del 
 - **Aplicación:** web, Java 21 + Spring Boot 4.1 + Thymeleaf + Bootstrap 5.
 - **PDF:** plantillas HTML convertidas con openhtmltopdf; gráficos con Chart.js (web) y JFreeChart (PDF).
 
-![Modelo entidad relación](docs/modelo-er.png)
+![Modelo entidad relación (EERCASE)](docs/modelo-er/modelo-er.png)
 
 ## Cómo se adaptó el caso de estudio
 
@@ -29,8 +29,8 @@ y pide tres características mínimas. En FrutiMarket los mismos papeles y carac
 | Requisito | Dónde se cumple |
 |---|---|
 | Lenguaje y BD (MySQL / SQL Server / Oracle) | Java + MariaDB (fork de MySQL); scripts en `database/` |
-| Mínimo 10 entidades fuertes | **20 entidades fuertes** + 1 débil (`detalle_pedido`). Ver [Entidades](#entidades) |
-| Registro, modificación, eliminación y consulta | Las 20 entidades tienen CRUD completo en el menú lateral (`/crud/...`) con búsqueda, orden y paginación; los errores de llaves foráneas, únicos y CHECK se traducen a mensajes claros |
+| Mínimo 10 entidades fuertes | **30 entidades fuertes** (20 de negocio y 10 catálogos) + 1 débil (`detalle_pedido`). Ver [Entidades](#entidades) |
+| Registro, modificación, eliminación y consulta | Tablas principales: **pedido, cliente, producto y lote**. Además las 30 entidades fuertes tienen CRUD en el menú lateral (`/crud/...`) con búsqueda, orden y paginación; los errores de llaves foráneas, únicos y CHECK se traducen a mensajes claros |
 | Consultas (datos puntuales) | 8 consultas en `/consultas`, separadas de los reportes |
 | 10 reportes (3 simples, 4 intermedios, 3 complejos) | `/reportes`; cada uno se ve en la app, muestra su SQL y se exporta a PDF |
 | Bonificación: 3 reportes con gráficos | **5 reportes** con gráfico (4, 5, 7, 8 y 10), también dentro del PDF |
@@ -62,7 +62,12 @@ y pide tres características mínimas. En FrutiMarket los mismos papeles y carac
 | 18 | `factura` | Facturas de venta |
 | 19 | `despacho` | Guías de despacho |
 | 20 | `notificacion` | Avisos y recordatorios |
+| 21–30 | Catálogos | `departamento`, `cargo`, `tipo_cliente`, `periodicidad` (con sus días), `tipo_metodo_pago`, `tipo_notificacion`, `estado_suscripcion`, `estado_pedido`, `estado_pago`, `estado_despacho` |
 | — | `detalle_pedido` (débil) | Líneas del pedido; su llave es (`id_pedido`, `linea`) |
+
+Los catálogos tienen llave natural (el código o el nombre): las tablas que los usan guardan ese código, la llave
+foránea garantiza que exista y los reportes de una sola tabla siguen siendo legibles. Cada tabla y columna tiene su
+`COMMENT` con la finalidad (es la base del diccionario de datos).
 
 **Objetos de base de datos** (`database/02_objetos.sql`): 4 triggers mantienen el inventario (descuentan al vender, devuelven al
 cancelar o eliminar y bloquean la venta si no hay existencias); 2 vistas (`v_ventas_detalladas`, `v_inventario_disponible`);
@@ -81,7 +86,7 @@ el procedimiento `sp_actualizar_fechas` (`04_actualizar_fechas.sql`) corre las f
 | 7 | Intermedio | Recaudo y comisiones por medio de pago | JOIN, GROUP BY, HAVING, CASE en SUM | Barras horizontales |
 | 8 | Complejo | Productos estrella (ventas sobre el promedio) | tabla derivada, subconsulta en WHERE y SELECT | Barras |
 | 9 | Complejo | Suscriptores en riesgo de abandono | NOT EXISTS, subconsultas correlacionadas | |
-| 10 | Complejo | Desempeño de los puntos de acopio | 6 subconsultas correlacionadas | Barras |
+| 10 | Complejo | Desempeño de los puntos de acopio | tabla derivada, 5 subconsultas correlacionadas y 1 escalar | Barras |
 
 ## Consultas
 
@@ -133,11 +138,13 @@ Abra <http://localhost:8080>. Para otro puerto: `PORT=8095 ./gradlew bootRun`.
 
 ```
 database/   01_esquema.sql · 02_objetos.sql · 03_datos.sql · 00_usuario_app.sql · 04_actualizar_fechas.sql
-            generador/generar_datos.py  (genera 03_datos.sql con semilla fija)
-docs/       modelo-er.mmd / .png / .svg · REQUERIMIENTOS.md
+            generador/  generar_datos.py (03_datos.sql con semilla fija) · diccionario.py (finalidad de tablas y columnas)
+                        generar_oracle.py · generar_relacional.py · comentar_esquema.py
+docs/       REQUERIMIENTOS.md · frutimarket.eer (modelo EERCASE) · modelo-er/ (imagen del ER)
+            relacional/ (modelo relacional general, completo y subvistas) · modelo-datos-oracle.sql (para Data Modeler)
 app/src/main/java/com/uniquindio/frutimarket/
             config/     login y seguridad
-            crud/       registro, modificación, eliminación y consulta de las 20 entidades
+            crud/       registro, modificación, eliminación y consulta de las 30 entidades fuertes
             reportes/   10 reportes, 8 consultas, gráficos y PDF
             ventas/     pedidos, pagos, facturas, despachos y documentos
             cuenta/     inicio, registro, perfil, notificaciones, planes, portal del campesino

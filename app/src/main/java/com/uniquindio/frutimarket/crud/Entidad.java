@@ -29,6 +29,7 @@ public class Entidad {
     private String urlCrear;
     private String urlDetalle;
     private boolean soloAdmin;
+    private boolean pkNatural;
 
     public Entidad(String clave, String tabla, String pk, String titulo, String singular, String icono, String grupo) {
         this.clave = clave;
@@ -66,6 +67,9 @@ public class Entidad {
 
     public Entidad soloAdmin() { soloAdmin = true; return this; }
 
+    /** La llave la escribe el usuario (codigo de un catalogo) y no se modifica despues */
+    public Entidad pkNatural() { pkNatural = true; return this; }
+
     public String getClave() { return clave; }
     public String getTabla() { return tabla; }
     public String getPk() { return pk; }
@@ -86,4 +90,5 @@ public class Entidad {
     /** Plantilla de url con {id} para entidades con pantalla propia (pedidos) */
     public String getUrlDetalle() { return urlDetalle; }
     public boolean isSoloAdmin() { return soloAdmin; }
+    public boolean isPkNatural() { return pkNatural; }
 }

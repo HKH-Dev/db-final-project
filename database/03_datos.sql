@@ -7,6 +7,85 @@ USE frutimarket_bd;
 SET NAMES utf8mb4;
 START TRANSACTION;
 
+-- departamento: 5 registros
+INSERT INTO departamento (nombre, codigo_dane) VALUES
+('Quindío', '63'),
+('Risaralda', '66'),
+('Caldas', '17'),
+('Valle del Cauca', '76'),
+('Tolima', '73');
+
+-- cargo: 9 registros
+INSERT INTO cargo (nombre, area, descripcion) VALUES
+('Gerente general', 'DIRECCION', 'Dirige la operación de FrutiMarket y responde por los resultados del negocio.'),
+('Contador', 'ADMINISTRACION', 'Lleva la contabilidad, la facturación electrónica y las obligaciones tributarias.'),
+('Auxiliar administrativo', 'ADMINISTRACION', 'Apoya la gestión documental, la nómina y la atención a proveedores.'),
+('Ejecutivo comercial', 'COMERCIAL', 'Atiende hoteles, restaurantes y tiendas, y vende los planes de suscripción.'),
+('Coordinador de logística', 'OPERACION', 'Programa rutas, transportadores y despachos de todos los puntos.'),
+('Coordinador de acopio', 'OPERACION', 'Administra un punto de acopio: recibe lotes, gestiona pedidos y despachos.'),
+('Analista de calidad', 'OPERACION', 'Clasifica los lotes recibidos (extra, primera, segunda) y controla la cadena de frío.'),
+('Auxiliar de bodega', 'OPERACION', 'Recibe, pesa, almacena y alista los productos del punto de acopio.'),
+('Operario de cargue', 'OPERACION', 'Carga y descarga los vehículos de los transportadores.');
+
+-- tipo_cliente: 5 registros
+INSERT INTO tipo_cliente (codigo, nombre, descripcion) VALUES
+('HOGAR', 'Hogar', 'Familia que compra para su consumo en casa.'),
+('RESTAURANTE', 'Restaurante', 'Restaurante, cafetería o servicio de alimentos.'),
+('HOTEL', 'Hotel', 'Hotel, finca turística o glamping de la zona cafetera.'),
+('TIENDA', 'Tienda', 'Tienda de barrio o frutería que revende al detal.'),
+('SUPERMERCADO', 'Supermercado', 'Cadena o supermercado con compras de volumen.');
+
+-- periodicidad: 3 registros
+INSERT INTO periodicidad (codigo, nombre, dias) VALUES
+('SEMANAL', 'Semanal', 7),
+('QUINCENAL', 'Quincenal', 15),
+('MENSUAL', 'Mensual', 30);
+
+-- tipo_metodo_pago: 5 registros
+INSERT INTO tipo_metodo_pago (codigo, nombre, descripcion) VALUES
+('TARJETA', 'Tarjeta', 'Tarjeta de crédito o débito procesada por la pasarela de pagos.'),
+('PSE', 'PSE', 'Débito a cuenta de ahorros o corriente por el botón PSE.'),
+('BILLETERA', 'Billetera digital', 'Pago desde el celular con Nequi o Daviplata.'),
+('TRANSFERENCIA', 'Transferencia', 'Transferencia bancaria a la cuenta de FrutiMarket.'),
+('EFECTIVO', 'Efectivo', 'Pago en efectivo al recibir el pedido.');
+
+-- tipo_notificacion: 6 registros
+INSERT INTO tipo_notificacion (codigo, nombre, descripcion) VALUES
+('RECORDATORIO', 'Recordatorio', 'Recordatorio programado por el usuario o por el sistema (renovación, pago pendiente).'),
+('PEDIDO', 'Pedido', 'Cambios de estado de un pedido: creado, despachado, entregado o cancelado.'),
+('PAGO', 'Pago', 'Resultado de un pago en línea o de un reembolso.'),
+('SUSCRIPCION', 'Suscripción', 'Activación, renovación o cancelación de un plan.'),
+('INVENTARIO', 'Inventario', 'Alertas de lotes por vencer o con pocas existencias.'),
+('SISTEMA', 'Sistema', 'Avisos generales de la plataforma.');
+
+-- estado_suscripcion: 4 registros
+INSERT INTO estado_suscripcion (codigo, nombre, descripcion) VALUES
+('ACTIVA', 'Activa', 'El plan está vigente y el cliente recibe su descuento.'),
+('PAUSADA', 'Pausada', 'El cliente suspendió temporalmente las entregas.'),
+('CANCELADA', 'Cancelada', 'El cliente terminó el plan antes de su fecha de fin.'),
+('VENCIDA', 'Vencida', 'El periodo terminó y no se renovó.');
+
+-- estado_pedido: 5 registros
+INSERT INTO estado_pedido (codigo, nombre, descripcion, orden) VALUES
+('PENDIENTE', 'Pendiente de pago', 'Pedido creado; el inventario está reservado y espera el pago.', 1),
+('PAGADO', 'Pagado', 'Pago aprobado y factura emitida; listo para despachar.', 2),
+('DESPACHADO', 'Despachado', 'Salió del punto de acopio con un transportador.', 3),
+('ENTREGADO', 'Entregado', 'El cliente recibió el pedido.', 4),
+('CANCELADO', 'Cancelado', 'Pedido anulado; el inventario volvió a los lotes.', 5);
+
+-- estado_pago: 4 registros
+INSERT INTO estado_pago (codigo, nombre, descripcion) VALUES
+('PENDIENTE', 'Pendiente', 'Pago iniciado que aún no confirma la entidad financiera.'),
+('APROBADO', 'Aprobado', 'La entidad financiera aprobó la transacción.'),
+('RECHAZADO', 'Rechazado', 'La entidad financiera rechazó la transacción.'),
+('REEMBOLSADO', 'Reembolsado', 'El valor se devolvió al cliente por cancelación.');
+
+-- estado_despacho: 3 registros
+INSERT INTO estado_despacho (codigo, nombre, descripcion) VALUES
+('EN_RUTA', 'En ruta', 'El pedido va en camino con el transportador.'),
+('ENTREGADO', 'Entregado', 'El transportador entregó el pedido al cliente.'),
+('DEVUELTO', 'Devuelto', 'El pedido no pudo entregarse y regresó al punto.');
+
 -- municipio: 14 registros
 INSERT INTO municipio (id_municipio, nombre, departamento, codigo_dane) VALUES
 (1, 'Armenia', 'Quindío', '63001'),
@@ -169,9 +248,9 @@ INSERT INTO empleado (id_empleado, id_punto, id_usuario, numero_documento, nombr
 (29, 6, NULL, '34591497', 'Jorge', 'Ramírez Loaiza', 'Operario de cargue', 1950000, '2020-07-13', '3059667041', 'jorge.ramirez@yahoo.es', 1),
 (30, 1, NULL, '35494092', 'Jorge', 'Valencia Restrepo', 'Gerente general', 8500000, '2022-05-10', '3114183925', 'jorge.valencia@frutimarket.com.co', 1),
 (31, 1, NULL, '8062056', 'Liliana', 'Zuluaga Loaiza', 'Contador', 5200000, '2021-04-24', '3109053266', 'liliana.zuluaga@frutimarket.com.co', 1),
-(32, 1, NULL, '25290284', 'Óscar', 'Loaiza Marín', 'Ejecutiva comercial', 3400000, '2019-06-18', '3143750423', 'oscar.loaiza@frutimarket.com.co', 1),
+(32, 1, NULL, '25290284', 'Óscar', 'Loaiza Marín', 'Ejecutivo comercial', 3400000, '2019-06-18', '3143750423', 'oscar.loaiza@frutimarket.com.co', 1),
 (33, 1, NULL, '26434075', 'Gloria', 'Arias Gómez', 'Ejecutivo comercial', 3300000, '2020-05-07', '3053587483', 'gloria.arias@frutimarket.com.co', 1),
-(34, 1, NULL, '8868564', 'Marleny', 'Velásquez Salazar', 'Coordinadora de logística', 4100000, '2021-02-28', '3127395450', 'marleny.velasquez@frutimarket.com.co', 1);
+(34, 1, NULL, '8868564', 'Marleny', 'Velásquez Salazar', 'Coordinador de logística', 4100000, '2021-02-28', '3127395450', 'marleny.velasquez@frutimarket.com.co', 1);
 
 -- campesino: 28 registros
 INSERT INTO campesino (id_campesino, id_usuario, id_municipio, tipo_documento, numero_documento, nombres, apellidos, telefono, email, fecha_vinculacion, certificado_bpa, activo) VALUES
@@ -25441,6 +25520,7 @@ INSERT INTO notificacion (id_notificacion, id_usuario, tipo, titulo, mensaje, fe
 (4598, 1, 'RECORDATORIO', 'Reunión con asociación de lulo de Pijao', 'Negociar precio de finca para la cosecha de diciembre.', '2026-11-06 08:00:00', 0, '2026-10-28 09:15:00'),
 (4599, 1, 'RECORDATORIO', 'Renovar póliza del furgón refrigerado', 'Vence el SOAT del vehículo de Transportes Refrigerados del Café.', '2026-11-12 08:00:00', 0, '2026-10-28 09:15:00'),
 (4600, 1, 'RECORDATORIO', 'Entrega del proyecto final', 'Sustentación del sistema FrutiMarket BD ante el docente.', '2026-11-20 08:00:00', 0, '2026-10-28 09:15:00');
--- Lotes que vencieron con existencias quedan marcados como VENCIDO
-UPDATE lote SET estado = 'VENCIDO' WHERE estado = 'DISPONIBLE' AND fecha_vencimiento < CURDATE();
+-- Lotes que vencieron con existencias al cierre de la simulacion quedan marcados como VENCIDO
+-- (04_actualizar_fechas.sql vuelve a evaluarlo con la fecha de hoy)
+UPDATE lote SET estado = 'VENCIDO' WHERE estado = 'DISPONIBLE' AND fecha_vencimiento < '2026-11-02';
 COMMIT;

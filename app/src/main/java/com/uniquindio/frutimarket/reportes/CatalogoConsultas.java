@@ -42,7 +42,7 @@ public class CatalogoConsultas {
         agregar(new Consulta("pedidos-cliente", "Pedidos de un cliente",
                 "Historial de pedidos de un cliente con su estado, pago y entrega.", "bag-check",
                 List.of(Parametro.sql("cliente", "Cliente", LISTA_CLIENTES, false),
-                        Parametro.opciones("estado", "Estado", true, "PENDIENTE", "PAGADO", "DESPACHADO", "ENTREGADO", "CANCELADO")),
+                        Parametro.sql("estado", "Estado", "SELECT codigo, nombre FROM estado_pedido ORDER BY orden", true)),
                 List.of(new Seccion("Pedidos", """
                                 SELECT p.id_pedido, p.fecha_pedido, pa.nombre AS punto, p.estado, p.total,
                                        (SELECT f.numero FROM factura f WHERE f.id_pedido = p.id_pedido) AS factura,

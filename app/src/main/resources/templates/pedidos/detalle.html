@@ -17,6 +17,9 @@
       <form th:if="${yo.esGestion() and p.estado == 'DESPACHADO'}" method="post" th:action="@{/pedidos/{i}/entregar(i=${p.id_pedido})}"><button class="btn btn-primary"><i class="bi bi-house-check me-1"></i>Marcar entregado</button></form>
       <form th:if="${p.estado == 'PENDIENTE' or p.estado == 'PAGADO'}" method="post" th:action="@{/pedidos/{i}/cancelar(i=${p.id_pedido})}"
             data-confirmar="¿Cancelar el pedido? Si ya se pagó, se registrará el reembolso."><button class="btn btn-outline-danger">Cancelar pedido</button></form>
+      <a th:if="${yo.esGestion()}" class="btn btn-light" th:href="@{/crud/pedidos/{i}/editar(i=${p.id_pedido})}"><i class="bi bi-pencil me-1"></i>Modificar</a>
+      <form th:if="${yo.esAdmin()}" method="post" th:action="@{/crud/pedidos/{i}/eliminar(i=${p.id_pedido})}"
+            data-confirmar="¿Eliminar el pedido con sus líneas, pagos, factura y despacho? Los kilos vuelven a los lotes. No se puede deshacer."><button class="btn btn-outline-danger"><i class="bi bi-trash me-1"></i>Eliminar</button></form>
     </div>
   </div>
   <div class="row g-3">

@@ -65,10 +65,10 @@ public class CrudController {
     }
 
     @GetMapping("/{id}")
-    public String detalle(@PathVariable String clave, @PathVariable long id, @AuthenticationPrincipal UsuarioSesion u, Model model) {
+    public String detalle(@PathVariable String clave, @PathVariable String id, @AuthenticationPrincipal UsuarioSesion u, Model model) {
         Entidad e = entidad(clave, u);
         if (e.getUrlDetalle() != null) {
-            return "redirect:" + e.getUrlDetalle().replace("{id}", String.valueOf(id));
+            return "redirect:" + e.getUrlDetalle().replace("{id}", id);
         }
         model.addAttribute("e", e);
         model.addAttribute("fila", repo.fila(e, id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
@@ -99,7 +99,7 @@ public class CrudController {
     }
 
     @GetMapping("/{id}/editar")
-    public String editar(@PathVariable String clave, @PathVariable long id, @AuthenticationPrincipal UsuarioSesion u, Model model) {
+    public String editar(@PathVariable String clave, @PathVariable String id, @AuthenticationPrincipal UsuarioSesion u, Model model) {
         Entidad e = entidad(clave, u);
         Map<String, Object> reg = repo.registro(e, id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         Map<String, Object> v = new HashMap<>();
@@ -111,10 +111,13 @@ public class CrudController {
     }
 
     @PostMapping("/guardar")
-    public String guardar(@PathVariable String clave, @RequestParam(required = false) Long id,
+    public String guardar(@PathVariable String clave, @RequestParam(required = false) String id,
                           @RequestParam MultiValueMap<String, String> form, @AuthenticationPrincipal UsuarioSesion u,
                           Model model, RedirectAttributes ra) {
         Entidad e = entidad(clave, u);
+        if (id != null && id.isBlank()) {
+            id = null;
+        }
         if (id == null ? !e.isCrear() || e.getUrlCrear() != null : !e.isEditar()) {
             throw new ResponseStatusException(HttpStatus.METHOD_NOT_ALLOWED);
         }
@@ -124,6 +127,10 @@ public class CrudController {
         for (Campo c : e.getCampos()) {
             String raw = form.getFirst(c.columna());
             crudo.put(c.columna(), raw);
+            if (id != null && e.isPkNatural() && c.columna().equals(e.getPk())) {
+                crudo.put(c.columna(), id);   // el codigo de un catalogo no se cambia al modificar
+                continue;
+            }
             try {
                 Object val = convertir(c, raw, id == null);
                 if (val != OMITIR) {
@@ -138,15 +145,20 @@ public class CrudController {
             return formulario(e, id, crudo, errores, model);
         }
         try {
-            long nuevoId = id;
+            String nuevoId = id;
             if (id == null) {
-                nuevoId = repo.insertar(e, valores);
+                if (e.isPkNatural()) {
+                    repo.insertarSinClave(e, valores);
+                    nuevoId = String.valueOf(valores.get(e.getPk()));
+                } else {
+                    nuevoId = String.valueOf(repo.insertar(e, valores));
+                }
                 ra.addFlashAttribute("ok", "Se registró el " + e.getSingular() + " correctamente.");
             } else {
                 repo.actualizar(e, id, valores);
                 ra.addFlashAttribute("ok", "Se guardaron los cambios del " + e.getSingular() + ".");
             }
-            return "redirect:/crud/" + clave + "/" + nuevoId;
+            return "redirect:/crud/" + clave + "/" + org.springframework.web.util.UriUtils.encodePathSegment(nuevoId, java.nio.charset.StandardCharsets.UTF_8);
         } catch (DataAccessException ex) {
             model.addAttribute("error", ErroresBd.mensaje(ex, false));
             return formulario(e, id, crudo, errores, model);
@@ -154,7 +166,7 @@ public class CrudController {
     }
 
     @PostMapping("/{id}/eliminar")
-    public String eliminar(@PathVariable String clave, @PathVariable long id, @AuthenticationPrincipal UsuarioSesion u, RedirectAttributes ra) {
+    public String eliminar(@PathVariable String clave, @PathVariable String id, @AuthenticationPrincipal UsuarioSesion u, RedirectAttributes ra) {
         Entidad e = entidad(clave, u);
         if (!e.isEliminar()) {
             throw new ResponseStatusException(HttpStatus.METHOD_NOT_ALLOWED);
@@ -165,11 +177,11 @@ public class CrudController {
             return "redirect:/crud/" + clave;
         } catch (DataAccessException ex) {
             ra.addFlashAttribute("error", ErroresBd.mensaje(ex, true));
-            return "redirect:/crud/" + clave + "/" + id;
+            return "redirect:/crud/" + clave + "/" + org.springframework.web.util.UriUtils.encodePathSegment(id, java.nio.charset.StandardCharsets.UTF_8);
         }
     }
 
-    private String formulario(Entidad e, Long id, Map<String, Object> valores, Map<String, String> errores, Model model) {
+    private String formulario(Entidad e, String id, Map<String, Object> valores, Map<String, String> errores, Model model) {
         model.addAttribute("e", e);
         model.addAttribute("id", id);
         model.addAttribute("v", valores);
@@ -218,11 +230,13 @@ public class CrudController {
                     }
                     yield dig;
                 }
-                case ENTERO, FK -> {
+                case ENTERO -> {
                     long n = Long.parseLong(s);
                     minimo(c, n);
                     yield n;
                 }
+                // llave foranea numerica (id) o codigo de un catalogo (llave natural)
+                case FK -> s.matches("-?\\d+") ? (Object) Long.parseLong(s) : s;
                 case DECIMAL, MONEDA -> {
                     BigDecimal n = new BigDecimal(s);
                     minimo(c, n.doubleValue());

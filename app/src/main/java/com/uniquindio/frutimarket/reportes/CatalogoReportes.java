@@ -59,7 +59,7 @@ public class CatalogoReportes {
                    AND (:cargo = '' OR cargo = :cargo)
                  ORDER BY salario DESC, empleado
                 """,
-                List.of(Parametro.sql("cargo", "Cargo", "SELECT DISTINCT cargo, cargo FROM empleado ORDER BY cargo", true)),
+                List.of(Parametro.sql("cargo", "Cargo", "SELECT nombre, nombre FROM cargo ORDER BY nombre", true)),
                 List.of(texto("empleado", "Empleado"), texto("numero_documento", "Cédula"), texto("cargo", "Cargo"),
                         de("fecha_ingreso", "Ingreso", Formato.FECHA), de("antiguedad", "Antigüedad (años)", Formato.ENTERO),
                         de("salario", "Salario mensual", Formato.MONEDA).conTotal(), de("costo_anual", "Salario anual", Formato.MONEDA).conTotal()),
@@ -168,7 +168,7 @@ public class CatalogoReportes {
                  ORDER BY total_comprado DESC
                 """.formatted(NO_CANCELADO),
                 List.of(Parametro.entero("anio", "Año", "ANIO_ACTUAL"), Parametro.entero("min_pedidos", "Mínimo de pedidos", "20"),
-                        Parametro.opciones("tipo", "Tipo de cliente", true, "HOGAR", "RESTAURANTE", "HOTEL", "TIENDA", "SUPERMERCADO")),
+                        Parametro.sql("tipo", "Tipo de cliente", "SELECT codigo, nombre FROM tipo_cliente ORDER BY nombre", true)),
                 List.of(texto("nombre", "Cliente"), de("tipo_cliente", "Tipo", Formato.ESTADO), texto("municipio", "Municipio"),
                         de("pedidos", "Pedidos", Formato.ENTERO).conTotal(), de("total_comprado", "Total comprado", Formato.MONEDA).conTotal(),
                         de("ticket_promedio", "Ticket promedio", Formato.MONEDA), de("ultima_compra", "Última compra", Formato.FECHA)),
@@ -281,7 +281,7 @@ public class CatalogoReportes {
                 "Por punto: kilos recibidos, vendidos y vencidos (merma), ventas, participación en el total y ventas por empleado.",
                 "Compara la eficiencia de cada punto para reasignar personal, inventario o cuartos fríos.",
                 List.of("punto_acopio", "municipio", "empleado", "lote", "pedido", "detalle_pedido"),
-                "Tabla derivada con 6 subconsultas correlacionadas, subconsulta escalar para el total",
+                "Tabla derivada con 5 subconsultas correlacionadas y una subconsulta escalar para el total",
                 """
                 SELECT x.*,
                        ROUND(100 * x.kg_vencidos / NULLIF(x.kg_recibidos, 0), 1) AS merma_pct,

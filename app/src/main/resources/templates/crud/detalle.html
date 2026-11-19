@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html th:replace="~{fragments/layout :: pagina(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
-<head><title th:text="${e.singular} + ' #' + ${id} + ' · FrutiMarket'">Detalle</title></head>
+<head><title th:text="${e.singular} + ' ' + ${id} + ' · FrutiMarket'">Detalle</title></head>
 <body>
 <section>
   <div class="titulo-pagina">
     <div>
       <div class="migas"><a href="/">Inicio</a> / <a th:href="@{/crud/{c}(c=${e.clave})}" th:text="${e.titulo}">Lista</a></div>
-      <h1 class="text-capitalize"><span th:text="${e.singular}">Entidad</span> <span class="text-secondary">#<span th:text="${id}"></span></span></h1>
+      <h1 class="text-capitalize"><span th:text="${e.singular}">Entidad</span> <span class="text-secondary"><th:block th:unless="${e.pkNatural}">#</th:block><span th:text="${id}"></span></span></h1>
     </div>
     <div class="d-flex gap-2 flex-wrap">
       <a th:if="${e.clave == 'pagos'}" class="btn btn-outline-primary" th:href="@{/documentos/comprobante/{i}(i=${id})}" target="_blank"><i class="bi bi-file-pdf me-1"></i>Comprobante</a>

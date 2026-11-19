@@ -32,6 +32,7 @@ BEGIN
         UPDATE notificacion SET fecha_programada = fecha_programada + INTERVAL v_dias DAY,
                                 fecha_creacion = fecha_creacion + INTERVAL v_dias DAY;
         UPDATE lote SET estado = 'VENCIDO' WHERE estado = 'DISPONIBLE' AND fecha_vencimiento < CURDATE();
+        UPDATE lote SET estado = 'DISPONIBLE' WHERE estado = 'VENCIDO' AND cantidad_disponible_kg > 0 AND fecha_vencimiento >= CURDATE();
         UPDATE suscripcion SET estado = 'VENCIDA' WHERE estado = 'ACTIVA' AND fecha_fin < CURDATE();
         COMMIT;
     END IF;

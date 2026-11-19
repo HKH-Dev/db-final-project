@@ -1,0 +1,832 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5400" height="2631" viewBox="10 213 5400 2631" font-family="DejaVu Sans, Arial, sans-serif" font-size="12"><rect x="10.0" y="213.0" width="100%" height="100%" fill="white"/>
+<line x1="970.0" y1="1740.0" x2="1134.0" y2="1723.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="300.0" x2="2414.0" y2="300.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="1260.0" x2="2414.0" y2="1226.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="300.0" x2="4014.0" y2="300.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="780.0" x2="5297.5" y2="780.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="300.0" x2="501.5" y2="300.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="780.0" x2="3385.5" y2="780.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="2388.0" x2="3374.0" y2="2371.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1740.0" x2="5294.0" y2="1740.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="2220.0" x2="5294.0" y2="2220.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="300.0" x2="1134.0" y2="266.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="300.0" x2="1134.0" y2="300.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2700.0" x2="1155.0" y2="2666.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2700.0" x2="1134.0" y2="2700.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="1260.0" x2="870.5" y2="1169.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="1260.0" x2="973.5" y2="1169.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="1260.0" x2="1073.0" y2="1169.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="1118.0" y2="637.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="1111.0" y2="671.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="1128.5" y2="705.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="994.5" y2="911.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="811.5" y2="705.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="145.0" y2="1209.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="131.0" y2="1277.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="289.0" y2="1129.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1740.0" x2="501.0" y2="1706.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1740.0" x2="494.0" y2="1774.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1740.0" x2="138.0" y2="1723.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1740.0" x2="145.0" y2="1757.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="148.5" y2="2666.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="166.0" y2="2700.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="351.0" y2="2791.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="468.0" y2="2791.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="168.0" y2="2529.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1740.0" x2="1439.0" y2="1689.0" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1740.0" x2="1765.0" y2="1814.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1740.0" x2="1761.5" y2="1848.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1428.5" y2="1226.0" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1747.5" y2="1151.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="4369.0" y2="2666.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="4009.5" y2="2700.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="4070.5" y2="2791.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="4191.0" y2="2791.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2468.0" y2="746.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2489.0" y2="814.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="780.0" x2="4017.5" y2="729.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="780.0" x2="4014.0" y2="831.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="780.0" x2="3661.5" y2="780.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1260.0" x2="5304.5" y2="1226.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1260.0" x2="5315.0" y2="1294.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1260.0" x2="3372.0" y2="1334.5" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1260.0" x2="3365.0" y2="1368.5" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1260.0" x2="3354.5" y2="1402.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="802.5" y2="2186.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="806.0" y2="2220.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="1142.5" y2="2294.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="1160.0" y2="2362.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="884.5" y2="2044.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3354.5" y2="1538.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3365.0" y2="1572.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3340.5" y2="1908.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1260.0" x2="4307.5" y2="1083.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1260.0" x2="4300.5" y2="1151.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1260.0" x2="4318.0" y2="1185.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1740.0" x2="4348.0" y2="1689.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1740.0" x2="4334.0" y2="1723.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1740.0" x2="4252.0" y2="1831.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2220.0" x2="3988.5" y2="2186.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2220.0" x2="3988.5" y2="2220.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="780.0" x2="134.5" y2="746.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="780.0" x2="223.5" y2="871.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="780.0" x2="337.0" y2="871.0" stroke="#777" stroke-width="1"/>
+<line x1="2090.0" y1="2220.0" x2="2250.5" y2="2186.0" stroke="#777" stroke-width="1"/>
+<line x1="2090.0" y1="2220.0" x2="2271.5" y2="2220.0" stroke="#777" stroke-width="1"/>
+<line x1="2090.0" y1="2220.0" x2="2264.5" y2="2254.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="1740.0" x2="1151.5" y2="1757.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="300.0" x2="2414.0" y2="266.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="300.0" x2="2431.5" y2="334.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="1260.0" x2="2407.0" y2="1260.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="1260.0" x2="2431.5" y2="1294.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="300.0" x2="4014.0" y2="266.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="300.0" x2="4007.0" y2="334.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="780.0" x2="5297.5" y2="746.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="780.0" x2="5315.0" y2="814.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="300.0" x2="501.5" y2="266.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="300.0" x2="519.0" y2="334.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="780.0" x2="3385.5" y2="746.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="780.0" x2="3403.0" y2="814.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="2388.0" x2="3374.0" y2="2337.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="2388.0" x2="3391.5" y2="2405.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="2388.0" x2="3370.5" y2="2439.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1740.0" x2="5294.0" y2="1706.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1740.0" x2="5311.5" y2="1774.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="2220.0" x2="5294.0" y2="2186.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="2220.0" x2="5311.5" y2="2254.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="300.0" x2="1151.5" y2="334.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2700.0" x2="1151.5" y2="2734.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="884.5" y2="911.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="1080.0" y2="911.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="836.0" y2="637.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="780.0" x2="808.0" y2="671.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="138.0" y2="1243.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="162.5" y2="1311.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="474.5" y2="1334.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="471.0" y2="1368.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="460.5" y2="1402.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="502.5" y2="1436.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1260.0" x2="402.5" y2="1129.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="1740.0" x2="494.0" y2="1740.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="159.0" y2="2734.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="213.0" y2="2791.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="140.0" y2="2563.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="2700.0" x2="196.0" y2="2597.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1740.0" x2="1446.0" y2="1723.0" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1740.0" x2="1435.5" y2="1757.0" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1740.0" x2="1439.0" y2="1791.0" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1740.0" x2="1744.0" y2="1882.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1411.0" y2="1260.0" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1442.5" y2="1294.0" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1754.5" y2="1117.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1768.5" y2="1185.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1751.0" y2="1334.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1740.5" y2="1368.5" stroke="#777" stroke-width="1"/>
+<line x1="1610.0" y1="1260.0" x2="1744.0" y2="1402.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="4369.0" y2="2700.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="4334.0" y2="2734.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="3999.0" y2="2666.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="3981.5" y2="2734.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2700.0" x2="4290.5" y2="2791.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2482.0" y2="780.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2164.5" y2="911.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2253.5" y2="911.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2339.0" y2="911.0" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2105.5" y2="637.5" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2088.0" y2="671.5" stroke="#777" stroke-width="1"/>
+<line x1="2250.0" y1="780.0" x2="2116.0" y2="705.5" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="780.0" x2="4014.0" y2="763.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="780.0" x2="4031.5" y2="797.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="780.0" x2="3665.0" y2="746.0" stroke="#777" stroke-width="1"/>
+<line x1="3850.0" y1="780.0" x2="3686.0" y2="814.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1260.0" x2="5294.0" y2="1260.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1260.0" x2="5089.0" y2="1351.0" stroke="#777" stroke-width="1"/>
+<line x1="5130.0" y1="1260.0" x2="5178.0" y2="1351.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1260.0" x2="3396.5" y2="1436.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="781.5" y2="2254.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="1121.5" y2="2328.5" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="1001.5" y2="2044.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="2220.0" x2="1087.0" y2="2044.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3407.0" y2="1606.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3037.5" y2="1874.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3069.0" y2="1908.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3065.5" y2="1942.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3333.5" y2="1874.0" stroke="#777" stroke-width="1"/>
+<line x1="3210.0" y1="1740.0" x2="3368.5" y2="1942.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1260.0" x2="4318.0" y2="1117.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1740.0" x2="4358.5" y2="1757.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1740.0" x2="4341.0" y2="1791.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1740.0" x2="4102.0" y2="1831.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="1740.0" x2="4184.0" y2="1831.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2220.0" x2="3985.0" y2="2254.0" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2220.0" x2="4328.5" y2="2294.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2220.0" x2="4328.5" y2="2328.5" stroke="#777" stroke-width="1"/>
+<line x1="4170.0" y1="2220.0" x2="4328.5" y2="2362.5" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="780.0" x2="166.0" y2="780.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="780.0" x2="162.5" y2="814.0" stroke="#777" stroke-width="1"/>
+<line x1="330.0" y1="780.0" x2="443.5" y2="871.0" stroke="#777" stroke-width="1"/>
+<line x1="2090.0" y1="2220.0" x2="2042.0" y2="2311.0" stroke="#777" stroke-width="1"/>
+<line x1="2090.0" y1="2220.0" x2="2134.5" y2="2311.0" stroke="#777" stroke-width="1"/>
+<line x1="970.0" y1="300.0" x2="970.0" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="961.0" y="343.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="972.2" y1="780.0" x2="972.2" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<line x1="967.8" y1="780.0" x2="967.8" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="979.0" y="745.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="780.0" x2="1610.0" y2="684.0" stroke="#222" stroke-width="1.1"/>
+<text x="1062.2" y="779.3" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="2250.0" y1="780.0" x2="1610.0" y2="684.0" stroke="#222" stroke-width="1.1"/>
+<text x="2160.5" y="761.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="970.0" y1="780.0" x2="618.0" y2="996.0" stroke="#222" stroke-width="1.1"/>
+<text x="914.2" y="807.7" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="330.0" y1="1260.0" x2="618.0" y2="996.0" stroke="#222" stroke-width="1.1"/>
+<text x="373.0" y="1236.8" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="970.0" y1="780.0" x2="1366.8" y2="933.6" stroke="#222" stroke-width="1.1"/>
+<text x="1041.1" y="821.2" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="1610.0" y1="1260.0" x2="1366.8" y2="933.6" stroke="#222" stroke-width="1.1"/>
+<text x="1590.5" y="1222.8" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="970.0" y1="780.0" x2="650.0" y2="780.0" stroke="#222" stroke-width="1.1"/>
+<text x="879.0" y="775.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="330.0" y1="782.2" x2="650.0" y2="782.2" stroke="#222" stroke-width="1.1"/>
+<line x1="330.0" y1="777.8" x2="650.0" y2="777.8" stroke="#222" stroke-width="1.1"/>
+<text x="421.0" y="793.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="1740.0" x2="970.0" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="979.0" y="1705.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="967.8" y1="1260.0" x2="967.8" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<line x1="972.2" y1="1260.0" x2="972.2" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="961.0" y="1303.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="1260.0" x2="1610.0" y2="996.0" stroke="#222" stroke-width="1.1"/>
+<text x="1044.0" y="1243.2" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="2249.3" y1="777.9" x2="1609.3" y2="993.9" stroke="#222" stroke-width="1.1"/>
+<line x1="2250.7" y1="782.1" x2="1610.7" y2="998.1" stroke="#222" stroke-width="1.1"/>
+<text x="2163.8" y="803.6" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="1260.0" x2="650.0" y2="1260.0" stroke="#222" stroke-width="1.1"/>
+<text x="879.0" y="1255.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="330.0" y1="1262.2" x2="650.0" y2="1262.2" stroke="#222" stroke-width="1.1"/>
+<line x1="330.0" y1="1257.8" x2="650.0" y2="1257.8" stroke="#222" stroke-width="1.1"/>
+<text x="421.0" y="1273.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="1260.0" x2="650.0" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="921.1" y="1289.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="331.3" y1="1741.8" x2="651.3" y2="1501.8" stroke="#222" stroke-width="1.1"/>
+<line x1="328.7" y1="1738.2" x2="648.7" y2="1498.2" stroke="#222" stroke-width="1.1"/>
+<text x="378.9" y="1718.6" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="1260.0" x2="1322.0" y2="1538.4" stroke="#222" stroke-width="1.1"/>
+<text x="1006.0" y="1304.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="1611.3" y1="1738.2" x2="1323.3" y2="1536.6" stroke="#222" stroke-width="1.1"/>
+<line x1="1608.7" y1="1741.8" x2="1320.7" y2="1540.2" stroke="#222" stroke-width="1.1"/>
+<text x="1569.2" y="1704.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="330.0" y1="1260.0" x2="330.0" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="321.0" y="1303.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="332.2" y1="1740.0" x2="332.2" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<line x1="327.8" y1="1740.0" x2="327.8" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="339.0" y="1705.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="2700.0" x2="650.0" y2="2700.0" stroke="#222" stroke-width="1.1"/>
+<text x="879.0" y="2695.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="330.0" y1="2702.2" x2="650.0" y2="2702.2" stroke="#222" stroke-width="1.1"/>
+<line x1="330.0" y1="2697.8" x2="650.0" y2="2697.8" stroke="#222" stroke-width="1.1"/>
+<text x="421.0" y="2713.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="330.0" y1="1740.0" x2="650.0" y2="1980.0" stroke="#222" stroke-width="1.1"/>
+<text x="368.1" y="1783.8" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="971.3" y1="2218.2" x2="651.3" y2="1978.2" stroke="#222" stroke-width="1.1"/>
+<line x1="968.7" y1="2221.8" x2="648.7" y2="1981.8" stroke="#222" stroke-width="1.1"/>
+<text x="931.9" y="2184.2" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="330.0" y1="2700.0" x2="650.0" y2="2460.0" stroke="#222" stroke-width="1.1"/>
+<text x="378.9" y="2678.6" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="968.7" y1="2218.2" x2="648.7" y2="2458.2" stroke="#222" stroke-width="1.1"/>
+<line x1="971.3" y1="2221.8" x2="651.3" y2="2461.8" stroke="#222" stroke-width="1.1"/>
+<text x="921.1" y="2249.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="1610.0" y1="1740.0" x2="1290.0" y2="1980.0" stroke="#222" stroke-width="1.1"/>
+<text x="1561.1" y="1769.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="971.3" y1="2221.8" x2="1291.3" y2="1981.8" stroke="#222" stroke-width="1.1"/>
+<line x1="968.7" y1="2218.2" x2="1288.7" y2="1978.2" stroke="#222" stroke-width="1.1"/>
+<text x="1018.9" y="2198.6" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="1610.0" y1="1740.0" x2="1725.2" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="1636.1" y="1710.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="1608.0" y1="1261.0" x2="1723.2" y2="1501.0" stroke="#222" stroke-width="1.1"/>
+<line x1="1612.0" y1="1259.0" x2="1727.2" y2="1499.0" stroke="#222" stroke-width="1.1"/>
+<text x="1619.8" y="1305.3" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="1610.0" y1="1740.0" x2="2410.0" y2="1682.4" stroke="#222" stroke-width="1.1"/>
+<text x="1701.6" y="1746.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3210.2" y1="1737.8" x2="2410.2" y2="1680.2" stroke="#222" stroke-width="1.1"/>
+<line x1="3209.8" y1="1742.2" x2="2409.8" y2="1684.6" stroke="#222" stroke-width="1.1"/>
+<text x="3119.7" y="1728.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="2250.0" y1="1260.0" x2="1930.0" y2="1356.0" stroke="#222" stroke-width="1.1"/>
+<text x="2157.1" y="1282.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="1609.4" y1="1262.1" x2="1929.4" y2="1358.1" stroke="#222" stroke-width="1.1"/>
+<line x1="1610.6" y1="1257.9" x2="1930.6" y2="1353.9" stroke="#222" stroke-width="1.1"/>
+<text x="1697.7" y="1299.7" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="2250.0" y1="300.0" x2="2250.0" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="2241.0" y="343.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="2252.2" y1="780.0" x2="2252.2" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<line x1="2247.8" y1="780.0" x2="2247.8" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="2259.0" y="745.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="2250.0" y1="780.0" x2="2890.0" y2="1308.0" stroke="#222" stroke-width="1.1"/>
+<text x="2284.5" y="824.1" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3211.8" y1="1738.7" x2="2891.8" y2="1306.7" stroke="#222" stroke-width="1.1"/>
+<line x1="3208.2" y1="1741.3" x2="2888.2" y2="1309.3" stroke="#222" stroke-width="1.1"/>
+<text x="3190.7" y="1702.8" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="2250.0" y1="780.0" x2="2826.0" y2="996.0" stroke="#222" stroke-width="1.1"/>
+<text x="2323.2" y="821.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3211.2" y1="1258.2" x2="2827.2" y2="994.2" stroke="#222" stroke-width="1.1"/>
+<line x1="3208.8" y1="1261.8" x2="2824.8" y2="997.8" stroke="#222" stroke-width="1.1"/>
+<text x="3168.5" y="1224.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3850.0" y1="300.0" x2="3850.0" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="3841.0" y="343.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3852.2" y1="780.0" x2="3852.2" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<line x1="3847.8" y1="780.0" x2="3847.8" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="3859.0" y="745.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3850.0" y1="780.0" x2="3530.0" y2="1020.0" stroke="#222" stroke-width="1.1"/>
+<text x="3801.1" y="809.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3211.3" y1="1261.8" x2="3531.3" y2="1021.8" stroke="#222" stroke-width="1.1"/>
+<line x1="3208.7" y1="1258.2" x2="3528.7" y2="1018.2" stroke="#222" stroke-width="1.1"/>
+<text x="3258.9" y="1238.6" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3210.0" y1="780.0" x2="3210.0" y2="1020.0" stroke="#222" stroke-width="1.1"/>
+<text x="3201.0" y="823.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3212.2" y1="1260.0" x2="3212.2" y2="1020.0" stroke="#222" stroke-width="1.1"/>
+<line x1="3207.8" y1="1260.0" x2="3207.8" y2="1020.0" stroke="#222" stroke-width="1.1"/>
+<text x="3219.0" y="1225.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3210.0" y1="1260.0" x2="3030.8" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="3176.0" y="1294.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3210.0" y1="1740.0" x2="3030.8" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="3190.5" y="1702.8" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3210.0" y1="2388.0" x2="3210.0" y2="2064.0" stroke="#222" stroke-width="1.1"/>
+<text x="3219.0" y="2353.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3207.8" y1="1740.0" x2="3207.8" y2="2064.0" stroke="#222" stroke-width="1.1"/>
+<line x1="3212.2" y1="1740.0" x2="3212.2" y2="2064.0" stroke="#222" stroke-width="1.1"/>
+<text x="3201.0" y="1783.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3209.1" y1="1738.0" x2="2649.1" y2="1978.0" stroke="#222" stroke-width="1.1"/>
+<line x1="3210.9" y1="1742.0" x2="2650.9" y2="1982.0" stroke="#222" stroke-width="1.1"/>
+<text x="3138.1" y="1765.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="2090.9" y1="2222.0" x2="2650.9" y2="1982.0" stroke="#222" stroke-width="1.1"/>
+<line x1="2089.1" y1="2218.0" x2="2649.1" y2="1978.0" stroke="#222" stroke-width="1.1"/>
+<text x="2161.9" y="2203.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="970.0" y1="2220.0" x2="1530.0" y2="2277.6" stroke="#222" stroke-width="1.1"/>
+<text x="1060.0" y="2242.3" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="2089.8" y1="2217.8" x2="1529.8" y2="2275.4" stroke="#222" stroke-width="1.1"/>
+<line x1="2090.2" y1="2222.2" x2="1530.2" y2="2279.8" stroke="#222" stroke-width="1.1"/>
+<text x="1998.2" y="2224.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3210.0" y1="1740.0" x2="3754.0" y2="1557.6" stroke="#222" stroke-width="1.1"/>
+<text x="3296.6" y="1724.4" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4170.0" y1="1260.0" x2="3754.0" y2="1557.6" stroke="#222" stroke-width="1.1"/>
+<text x="4119.6" y="1289.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3210.0" y1="1260.0" x2="3690.0" y2="1140.0" stroke="#222" stroke-width="1.1"/>
+<text x="3302.7" y="1250.1" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4170.0" y1="1260.0" x2="3690.0" y2="1140.0" stroke="#222" stroke-width="1.1"/>
+<text x="4081.7" y="1232.6" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="5130.0" y1="780.0" x2="5130.0" y2="1020.0" stroke="#222" stroke-width="1.1"/>
+<text x="5121.0" y="823.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="5132.2" y1="1260.0" x2="5132.2" y2="1020.0" stroke="#222" stroke-width="1.1"/>
+<line x1="5127.8" y1="1260.0" x2="5127.8" y2="1020.0" stroke="#222" stroke-width="1.1"/>
+<text x="5139.0" y="1225.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="5130.0" y1="1260.0" x2="4650.0" y2="1260.0" stroke="#222" stroke-width="1.1"/>
+<text x="5039.0" y="1255.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4170.0" y1="1262.2" x2="4650.0" y2="1262.2" stroke="#222" stroke-width="1.1"/>
+<line x1="4170.0" y1="1257.8" x2="4650.0" y2="1257.8" stroke="#222" stroke-width="1.1"/>
+<text x="4261.0" y="1273.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="5130.0" y1="1740.0" x2="4650.0" y2="1500.0" stroke="#222" stroke-width="1.1"/>
+<text x="5073.7" y="1705.8" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4169.0" y1="1262.0" x2="4649.0" y2="1502.0" stroke="#222" stroke-width="1.1"/>
+<line x1="4171.0" y1="1258.0" x2="4651.0" y2="1498.0" stroke="#222" stroke-width="1.1"/>
+<text x="4226.3" y="1302.2" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="3210.0" y1="1740.0" x2="3690.0" y2="1740.0" stroke="#222" stroke-width="1.1"/>
+<text x="3301.0" y="1753.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4170.0" y1="1737.8" x2="3690.0" y2="1737.8" stroke="#222" stroke-width="1.1"/>
+<line x1="4170.0" y1="1742.2" x2="3690.0" y2="1742.2" stroke="#222" stroke-width="1.1"/>
+<text x="4079.0" y="1735.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="3210.0" y1="1740.0" x2="3690.0" y2="1980.0" stroke="#222" stroke-width="1.1"/>
+<text x="3266.3" y="1782.2" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4171.0" y1="2218.0" x2="3691.0" y2="1978.0" stroke="#222" stroke-width="1.1"/>
+<line x1="4169.0" y1="2222.0" x2="3689.0" y2="1982.0" stroke="#222" stroke-width="1.1"/>
+<text x="4113.7" y="2185.8" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4170.0" y1="2700.0" x2="4170.0" y2="2460.0" stroke="#222" stroke-width="1.1"/>
+<text x="4179.0" y="2665.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4167.8" y1="2220.0" x2="4167.8" y2="2460.0" stroke="#222" stroke-width="1.1"/>
+<line x1="4172.2" y1="2220.0" x2="4172.2" y2="2460.0" stroke="#222" stroke-width="1.1"/>
+<text x="4161.0" y="2263.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="5130.0" y1="2220.0" x2="4650.0" y2="2220.0" stroke="#222" stroke-width="1.1"/>
+<text x="5039.0" y="2215.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="4170.0" y1="2222.2" x2="4650.0" y2="2222.2" stroke="#222" stroke-width="1.1"/>
+<line x1="4170.0" y1="2217.8" x2="4650.0" y2="2217.8" stroke="#222" stroke-width="1.1"/>
+<text x="4261.0" y="2233.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<line x1="330.0" y1="300.0" x2="330.0" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="321.0" y="343.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">1</text>
+<line x1="332.2" y1="780.0" x2="332.2" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<line x1="327.8" y1="780.0" x2="327.8" y2="540.0" stroke="#222" stroke-width="1.1"/>
+<text x="339.0" y="745.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#b00">N</text>
+<rect x="895.0" y="1717.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="970.0" y="1745.0" text-anchor="middle" font-weight="bold" font-size="13">DEPARTAMENTO</text>
+<rect x="2175.0" y="277.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="2250.0" y="305.0" text-anchor="middle" font-weight="bold" font-size="13">TIPO_CLIENTE</text>
+<rect x="2175.0" y="1237.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="2250.0" y="1265.0" text-anchor="middle" font-weight="bold" font-size="13">CARGO</text>
+<rect x="3775.0" y="277.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="3850.0" y="305.0" text-anchor="middle" font-weight="bold" font-size="13">PERIODICIDAD</text>
+<rect x="5051.5" y="757.0" width="157" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="5130.0" y="785.0" text-anchor="middle" font-weight="bold" font-size="13">TIPO_METODO_PAGO</text>
+<rect x="247.5" y="277.0" width="165" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="330.0" y="305.0" text-anchor="middle" font-weight="bold" font-size="13">TIPO_NOTIFICACION</text>
+<rect x="3123.5" y="757.0" width="173" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="3210.0" y="785.0" text-anchor="middle" font-weight="bold" font-size="13">ESTADO_SUSCRIPCION</text>
+<rect x="3135.0" y="2365.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="3210.0" y="2393.0" text-anchor="middle" font-weight="bold" font-size="13">ESTADO_PEDIDO</text>
+<rect x="5055.0" y="1717.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="5130.0" y="1745.0" text-anchor="middle" font-weight="bold" font-size="13">ESTADO_PAGO</text>
+<rect x="5055.0" y="2197.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="5130.0" y="2225.0" text-anchor="middle" font-weight="bold" font-size="13">ESTADO_DESPACHO</text>
+<rect x="895.0" y="277.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="970.0" y="305.0" text-anchor="middle" font-weight="bold" font-size="13">ROL</text>
+<rect x="895.0" y="2677.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="970.0" y="2705.0" text-anchor="middle" font-weight="bold" font-size="13">CATEGORIA</text>
+<rect x="895.0" y="1237.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="970.0" y="1265.0" text-anchor="middle" font-weight="bold" font-size="13">MUNICIPIO</text>
+<rect x="895.0" y="757.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="970.0" y="785.0" text-anchor="middle" font-weight="bold" font-size="13">USUARIO</text>
+<rect x="255.0" y="1237.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="330.0" y="1265.0" text-anchor="middle" font-weight="bold" font-size="13">CAMPESINO</text>
+<rect x="255.0" y="1717.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="330.0" y="1745.0" text-anchor="middle" font-weight="bold" font-size="13">FINCA</text>
+<rect x="255.0" y="2677.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="330.0" y="2705.0" text-anchor="middle" font-weight="bold" font-size="13">PRODUCTO</text>
+<rect x="1535.0" y="1717.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="1610.0" y="1745.0" text-anchor="middle" font-weight="bold" font-size="13">PUNTO_ACOPIO</text>
+<rect x="1535.0" y="1237.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="1610.0" y="1265.0" text-anchor="middle" font-weight="bold" font-size="13">EMPLEADO</text>
+<rect x="4095.0" y="2677.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="4170.0" y="2705.0" text-anchor="middle" font-weight="bold" font-size="13">TRANSPORTADOR</text>
+<rect x="2175.0" y="757.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="2250.0" y="785.0" text-anchor="middle" font-weight="bold" font-size="13">CLIENTE</text>
+<rect x="3775.0" y="757.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="3850.0" y="785.0" text-anchor="middle" font-weight="bold" font-size="13">PLAN</text>
+<rect x="5055.0" y="1237.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="5130.0" y="1265.0" text-anchor="middle" font-weight="bold" font-size="13">METODO_PAGO</text>
+<rect x="3135.0" y="1237.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="3210.0" y="1265.0" text-anchor="middle" font-weight="bold" font-size="13">SUSCRIPCION</text>
+<rect x="895.0" y="2197.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="970.0" y="2225.0" text-anchor="middle" font-weight="bold" font-size="13">LOTE</text>
+<rect x="3135.0" y="1717.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="3210.0" y="1745.0" text-anchor="middle" font-weight="bold" font-size="13">PEDIDO</text>
+<rect x="4095.0" y="1237.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="4170.0" y="1265.0" text-anchor="middle" font-weight="bold" font-size="13">PAGO</text>
+<rect x="4095.0" y="1717.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="4170.0" y="1745.0" text-anchor="middle" font-weight="bold" font-size="13">FACTURA</text>
+<rect x="4095.0" y="2197.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="4170.0" y="2225.0" text-anchor="middle" font-weight="bold" font-size="13">DESPACHO</text>
+<rect x="255.0" y="757.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<text x="330.0" y="785.0" text-anchor="middle" font-weight="bold" font-size="13">NOTIFICACION</text>
+<rect x="2015.0" y="2197.0" width="150" height="46" fill="#fff6d5" stroke="#222" stroke-width="1.4"/>
+<rect x="2019.0" y="2201.0" width="142" height="38" fill="none" stroke="#222" stroke-width="1.2"/>
+<text x="2090.0" y="2225.0" text-anchor="middle" font-weight="bold" font-size="13">DETALLE_PEDIDO</text>
+<polygon points="970.0,510.0 1036.0,540.0 970.0,570.0 904.0,540.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="970.0" y="544.0" text-anchor="middle" font-size="11.5">asigna</text>
+<polygon points="1610.0,654.0 1687.0,684.0 1610.0,714.0 1533.0,684.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1610.0" y="688.0" text-anchor="middle" font-size="11.5">cuenta_cliente</text>
+<polygon points="618.0,966.0 702.0,996.0 618.0,1026.0 534.0,996.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="618.0" y="1000.0" text-anchor="middle" font-size="11.5">cuenta_campesino</text>
+<polygon points="1366.8,903.6 1447.3,933.6 1366.8,963.6 1286.3,933.6" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1366.8" y="937.6" text-anchor="middle" font-size="11.5">cuenta_empleado</text>
+<polygon points="650.0,750.0 716.0,780.0 650.0,810.0 584.0,780.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="650.0" y="784.0" text-anchor="middle" font-size="11.5">recibe</text>
+<polygon points="970.0,1470.0 1036.5,1500.0 970.0,1530.0 903.5,1500.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="970.0" y="1504.0" text-anchor="middle" font-size="11.5">pertenece_a</text>
+<polygon points="1610.0,966.0 1687.0,996.0 1610.0,1026.0 1533.0,996.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1610.0" y="1000.0" text-anchor="middle" font-size="11.5">reside_cliente</text>
+<polygon points="650.0,1230.0 734.0,1260.0 650.0,1290.0 566.0,1260.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="650.0" y="1264.0" text-anchor="middle" font-size="11.5">reside_campesino</text>
+<polygon points="650.0,1470.0 716.5,1500.0 650.0,1530.0 583.5,1500.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="650.0" y="1504.0" text-anchor="middle" font-size="11.5">ubica_finca</text>
+<polygon points="1322.0,1508.4 1388.5,1538.4 1322.0,1568.4 1255.5,1538.4" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1322.0" y="1542.4" text-anchor="middle" font-size="11.5">ubica_punto</text>
+<polygon points="330.0,1470.0 396.0,1500.0 330.0,1530.0 264.0,1500.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="330.0" y="1504.0" text-anchor="middle" font-size="11.5">posee</text>
+<polygon points="650.0,2670.0 716.0,2700.0 650.0,2730.0 584.0,2700.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="650.0" y="2704.0" text-anchor="middle" font-size="11.5">agrupa</text>
+<polygon points="650.0,1950.0 716.0,1980.0 650.0,2010.0 584.0,1980.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="650.0" y="1984.0" text-anchor="middle" font-size="11.5">cosecha</text>
+<polygon points="650.0,2430.0 716.0,2460.0 650.0,2490.0 584.0,2460.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="650.0" y="2464.0" text-anchor="middle" font-size="11.5">es_de</text>
+<polygon points="1290.0,1950.0 1356.0,1980.0 1290.0,2010.0 1224.0,1980.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1290.0" y="1984.0" text-anchor="middle" font-size="11.5">almacena</text>
+<polygon points="1725.2,1470.0 1791.2,1500.0 1725.2,1530.0 1659.2,1500.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1725.2" y="1504.0" text-anchor="middle" font-size="11.5">emplea</text>
+<polygon points="2410.0,1652.4 2476.0,1682.4 2410.0,1712.4 2344.0,1682.4" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="2410.0" y="1686.4" text-anchor="middle" font-size="11.5">despacha</text>
+<polygon points="1930.0,1326.0 2000.0,1356.0 1930.0,1386.0 1860.0,1356.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1930.0" y="1360.0" text-anchor="middle" font-size="11.5">define_cargo</text>
+<polygon points="2250.0,510.0 2337.5,540.0 2250.0,570.0 2162.5,540.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="2250.0" y="544.0" text-anchor="middle" font-size="11.5">clasifica_cliente</text>
+<polygon points="2890.0,1278.0 2956.0,1308.0 2890.0,1338.0 2824.0,1308.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="2890.0" y="1312.0" text-anchor="middle" font-size="11.5">hace</text>
+<polygon points="2826.0,966.0 2892.0,996.0 2826.0,1026.0 2760.0,996.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="2826.0" y="1000.0" text-anchor="middle" font-size="11.5">contrata</text>
+<polygon points="3850.0,510.0 3937.5,540.0 3850.0,570.0 3762.5,540.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3850.0" y="544.0" text-anchor="middle" font-size="11.5">periodicidad_plan</text>
+<polygon points="3530.0,990.0 3607.0,1020.0 3530.0,1050.0 3453.0,1020.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3530.0" y="1024.0" text-anchor="middle" font-size="11.5">se_contrata_en</text>
+<polygon points="3210.0,990.0 3301.0,1020.0 3210.0,1050.0 3119.0,1020.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3210.0" y="1024.0" text-anchor="middle" font-size="11.5">estado_suscripcion</text>
+<polygon points="3030.8,1470.0 3107.8,1500.0 3030.8,1530.0 2953.8,1500.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3030.8" y="1504.0" text-anchor="middle" font-size="11.5">da_descuento_a</text>
+<polygon points="3210.0,2034.0 3283.5,2064.0 3210.0,2094.0 3136.5,2064.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3210.0" y="2068.0" text-anchor="middle" font-size="11.5">estado_pedido</text>
+<polygon points="2650.0,1950.0 2716.0,1980.0 2650.0,2010.0 2584.0,1980.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<polygon points="2650.0,1956.0 2706.0,1980.0 2650.0,2004.0 2594.0,1980.0" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="2650.0" y="1984.0" text-anchor="middle" font-size="11.5">contiene</text>
+<polygon points="1530.0,2247.6 1596.0,2277.6 1530.0,2307.6 1464.0,2277.6" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="1530.0" y="2281.6" text-anchor="middle" font-size="11.5">surte</text>
+<polygon points="3754.0,1527.6 3831.0,1557.6 3754.0,1587.6 3677.0,1557.6" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3754.0" y="1561.6" text-anchor="middle" font-size="11.5">se_paga_pedido</text>
+<polygon points="3690.0,1110.0 3784.5,1140.0 3690.0,1170.0 3595.5,1140.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3690.0" y="1144.0" text-anchor="middle" font-size="11.5">se_paga_suscripcion</text>
+<polygon points="5130.0,990.0 5210.5,1020.0 5130.0,1050.0 5049.5,1020.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="5130.0" y="1024.0" text-anchor="middle" font-size="11.5">tipifica_metodo</text>
+<polygon points="4650.0,1230.0 4716.0,1260.0 4650.0,1290.0 4584.0,1260.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="4650.0" y="1264.0" text-anchor="middle" font-size="11.5">medio</text>
+<polygon points="4650.0,1470.0 4716.5,1500.0 4650.0,1530.0 4583.5,1500.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="4650.0" y="1504.0" text-anchor="middle" font-size="11.5">estado_pago</text>
+<polygon points="3690.0,1710.0 3756.0,1740.0 3690.0,1770.0 3624.0,1740.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3690.0" y="1744.0" text-anchor="middle" font-size="11.5">genera</text>
+<polygon points="3690.0,1950.0 3756.5,1980.0 3690.0,2010.0 3623.5,1980.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="3690.0" y="1984.0" text-anchor="middle" font-size="11.5">se_envia_en</text>
+<polygon points="4170.0,2430.0 4236.0,2460.0 4170.0,2490.0 4104.0,2460.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="4170.0" y="2464.0" text-anchor="middle" font-size="11.5">transporta</text>
+<polygon points="4650.0,2190.0 4730.5,2220.0 4650.0,2250.0 4569.5,2220.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="4650.0" y="2224.0" text-anchor="middle" font-size="11.5">estado_despacho</text>
+<polygon points="330.0,510.0 431.5,540.0 330.0,570.0 228.5,540.0" fill="#e8f1ff" stroke="#222" stroke-width="1.3"/>
+<text x="330.0" y="544.0" text-anchor="middle" font-size="11.5">tipifica_notificacion</text>
+<ellipse cx="1134.0" cy="1723.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1134.0" y="1727.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">nombre</text>
+<ellipse cx="1151.5" cy="1757.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1151.5" y="1761.0" text-anchor="middle" font-size="11">codigo_dane</text>
+<ellipse cx="2414.0" cy="266.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2414.0" y="270.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="2414.0" cy="300.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2414.0" y="304.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="2431.5" cy="334.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2431.5" y="338.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="2414.0" cy="1226.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2414.0" y="1230.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">nombre</text>
+<ellipse cx="2407.0" cy="1260.0" rx="27.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2407.0" y="1264.0" text-anchor="middle" font-size="11">area</text>
+<ellipse cx="2431.5" cy="1294.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2431.5" y="1298.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="4014.0" cy="266.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4014.0" y="270.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="4014.0" cy="300.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4014.0" y="304.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="4007.0" cy="334.0" rx="27.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4007.0" y="338.0" text-anchor="middle" font-size="11">dias</text>
+<ellipse cx="5297.5" cy="746.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5297.5" y="750.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="5297.5" cy="780.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5297.5" y="784.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="5315.0" cy="814.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5315.0" y="818.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="501.5" cy="266.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="501.5" y="270.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="501.5" cy="300.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="501.5" y="304.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="519.0" cy="334.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="519.0" y="338.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="3385.5" cy="746.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3385.5" y="750.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="3385.5" cy="780.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3385.5" y="784.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="3403.0" cy="814.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3403.0" y="818.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="3374.0" cy="2337.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3374.0" y="2341.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="3374.0" cy="2371.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3374.0" y="2375.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="3391.5" cy="2405.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3391.5" y="2409.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="3370.5" cy="2439.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3370.5" y="2443.0" text-anchor="middle" font-size="11">orden</text>
+<ellipse cx="5294.0" cy="1706.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5294.0" y="1710.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="5294.0" cy="1740.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5294.0" y="1744.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="5311.5" cy="1774.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5311.5" y="1778.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="5294.0" cy="2186.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5294.0" y="2190.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">codigo</text>
+<ellipse cx="5294.0" cy="2220.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5294.0" y="2224.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="5311.5" cy="2254.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5311.5" y="2258.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="1134.0" cy="266.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1134.0" y="270.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_rol</text>
+<ellipse cx="1134.0" cy="300.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1134.0" y="304.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="1151.5" cy="334.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1151.5" y="338.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="1155.0" cy="2666.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1155.0" y="2670.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_categoria</text>
+<ellipse cx="1134.0" cy="2700.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1134.0" y="2704.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="1151.5" cy="2734.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1151.5" y="2738.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="870.5" cy="1169.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="870.5" y="1173.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_municipio</text>
+<ellipse cx="973.5" cy="1169.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="973.5" y="1173.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="1073.0" cy="1169.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1073.0" y="1173.0" text-anchor="middle" font-size="11">codigo_dane</text>
+<ellipse cx="1118.0" cy="637.5" rx="48.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1118.0" y="641.5" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_usuario</text>
+<ellipse cx="1111.0" cy="671.5" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1111.0" y="675.5" text-anchor="middle" font-size="11">username</text>
+<ellipse cx="1128.5" cy="705.5" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1128.5" y="709.5" text-anchor="middle" font-size="11">password_hash</text>
+<ellipse cx="884.5" cy="911.0" rx="65.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="884.5" y="915.0" text-anchor="middle" font-size="11">nombre_completo</text>
+<ellipse cx="994.5" cy="911.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="994.5" y="915.0" text-anchor="middle" font-size="11">email</text>
+<ellipse cx="1080.0" cy="911.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1080.0" y="915.0" text-anchor="middle" font-size="11">telefono</text>
+<ellipse cx="836.0" cy="637.5" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="836.0" y="641.5" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="808.0" cy="671.5" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="808.0" y="675.5" text-anchor="middle" font-size="11">fecha_registro</text>
+<ellipse cx="811.5" cy="705.5" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="811.5" y="709.5" text-anchor="middle" font-size="11">ultimo_acceso</text>
+<ellipse cx="145.0" cy="1209.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="145.0" y="1213.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_campesino</text>
+<ellipse cx="138.0" cy="1243.0" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="138.0" y="1247.0" text-anchor="middle" font-size="11">tipo_documento</text>
+<ellipse cx="131.0" cy="1277.0" rx="69.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="131.0" y="1281.0" text-anchor="middle" font-size="11">numero_documento</text>
+<ellipse cx="162.5" cy="1311.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="162.5" y="1315.0" text-anchor="middle" font-size="11">nombres</text>
+<ellipse cx="474.5" cy="1334.5" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="474.5" y="1338.5" text-anchor="middle" font-size="11">apellidos</text>
+<ellipse cx="471.0" cy="1368.5" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="471.0" y="1372.5" text-anchor="middle" font-size="11">telefono</text>
+<ellipse cx="460.5" cy="1402.5" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="460.5" y="1406.5" text-anchor="middle" font-size="11">email</text>
+<ellipse cx="502.5" cy="1436.5" rx="72.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="502.5" y="1440.5" text-anchor="middle" font-size="11">fecha_vinculacion</text>
+<ellipse cx="289.0" cy="1129.0" rx="65.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="289.0" y="1133.0" text-anchor="middle" font-size="11">certificado_bpa</text>
+<ellipse cx="402.5" cy="1129.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="402.5" y="1133.0" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="501.0" cy="1706.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="501.0" y="1710.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_finca</text>
+<ellipse cx="494.0" cy="1740.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="494.0" y="1744.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="494.0" cy="1774.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="494.0" y="1778.0" text-anchor="middle" font-size="11">vereda</text>
+<ellipse cx="138.0" cy="1723.0" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="138.0" y="1727.0" text-anchor="middle" font-size="11">area_hectareas</text>
+<ellipse cx="145.0" cy="1757.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="145.0" y="1761.0" text-anchor="middle" font-size="11">altitud_msnm</text>
+<ellipse cx="148.5" cy="2666.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="148.5" y="2670.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_producto</text>
+<ellipse cx="166.0" cy="2700.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="166.0" y="2704.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="159.0" cy="2734.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="159.0" y="2738.0" text-anchor="middle" font-size="11">variedad</text>
+<ellipse cx="213.0" cy="2791.0" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="213.0" y="2795.0" text-anchor="middle" font-size="11">unidad_medida</text>
+<ellipse cx="351.0" cy="2791.0" rx="65.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="351.0" y="2795.0" text-anchor="middle" font-size="11">precio_venta_kg</text>
+<ellipse cx="468.0" cy="2791.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="468.0" y="2795.0" text-anchor="middle" font-size="11">iva_pct</text>
+<ellipse cx="168.0" cy="2529.5" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="168.0" y="2533.5" text-anchor="middle" font-size="11">vida_util_dias</text>
+<ellipse cx="140.0" cy="2563.5" rx="90.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="140.0" y="2567.5" text-anchor="middle" font-size="11">requiere_refrigeracion</text>
+<ellipse cx="196.0" cy="2597.5" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="196.0" y="2601.5" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="1439.0" cy="1689.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1439.0" y="1693.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_punto</text>
+<ellipse cx="1446.0" cy="1723.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1446.0" y="1727.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="1435.5" cy="1757.0" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1435.5" y="1761.0" text-anchor="middle" font-size="11">direccion</text>
+<ellipse cx="1439.0" cy="1791.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1439.0" y="1795.0" text-anchor="middle" font-size="11">telefono</text>
+<ellipse cx="1765.0" cy="1814.5" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1765.0" y="1818.5" text-anchor="middle" font-size="11">capacidad_kg</text>
+<ellipse cx="1761.5" cy="1848.5" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1761.5" y="1852.5" text-anchor="middle" font-size="11">refrigerado</text>
+<ellipse cx="1744.0" cy="1882.5" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1744.0" y="1886.5" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="1428.5" cy="1226.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1428.5" y="1230.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_empleado</text>
+<ellipse cx="1411.0" cy="1260.0" rx="69.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1411.0" y="1264.0" text-anchor="middle" font-size="11">numero_documento</text>
+<ellipse cx="1442.5" cy="1294.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1442.5" y="1298.0" text-anchor="middle" font-size="11">nombres</text>
+<ellipse cx="1754.5" cy="1117.5" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1754.5" y="1121.5" text-anchor="middle" font-size="11">apellidos</text>
+<ellipse cx="1747.5" cy="1151.5" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1747.5" y="1155.5" text-anchor="middle" font-size="11">salario</text>
+<ellipse cx="1768.5" cy="1185.5" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1768.5" y="1189.5" text-anchor="middle" font-size="11">fecha_ingreso</text>
+<ellipse cx="1751.0" cy="1334.5" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1751.0" y="1338.5" text-anchor="middle" font-size="11">telefono</text>
+<ellipse cx="1740.5" cy="1368.5" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1740.5" y="1372.5" text-anchor="middle" font-size="11">email</text>
+<ellipse cx="1744.0" cy="1402.5" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1744.0" y="1406.5" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="4369.0" cy="2666.0" rx="69.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4369.0" y="2670.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_transportador</text>
+<ellipse cx="4369.0" cy="2700.0" rx="69.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4369.0" y="2704.0" text-anchor="middle" font-size="11">numero_documento</text>
+<ellipse cx="4334.0" cy="2734.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4334.0" y="2738.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="3999.0" cy="2666.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3999.0" y="2670.0" text-anchor="middle" font-size="11">telefono</text>
+<ellipse cx="4009.5" cy="2700.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4009.5" y="2704.0" text-anchor="middle" font-size="11">placa</text>
+<ellipse cx="3981.5" cy="2734.0" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3981.5" y="2738.0" text-anchor="middle" font-size="11">tipo_vehiculo</text>
+<ellipse cx="4070.5" cy="2791.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4070.5" y="2795.0" text-anchor="middle" font-size="11">capacidad_kg</text>
+<ellipse cx="4191.0" cy="2791.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4191.0" y="2795.0" text-anchor="middle" font-size="11">refrigerado</text>
+<ellipse cx="4290.5" cy="2791.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4290.5" y="2795.0" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="2468.0" cy="746.0" rx="48.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2468.0" y="750.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_cliente</text>
+<ellipse cx="2482.0" cy="780.0" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2482.0" y="784.0" text-anchor="middle" font-size="11">tipo_documento</text>
+<ellipse cx="2489.0" cy="814.0" rx="69.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2489.0" y="818.0" text-anchor="middle" font-size="11">numero_documento</text>
+<ellipse cx="2164.5" cy="911.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2164.5" y="915.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="2253.5" cy="911.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2253.5" y="915.0" text-anchor="middle" font-size="11">telefono</text>
+<ellipse cx="2339.0" cy="911.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2339.0" y="915.0" text-anchor="middle" font-size="11">email</text>
+<ellipse cx="2105.5" cy="637.5" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2105.5" y="641.5" text-anchor="middle" font-size="11">direccion</text>
+<ellipse cx="2088.0" cy="671.5" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2088.0" y="675.5" text-anchor="middle" font-size="11">fecha_registro</text>
+<ellipse cx="2116.0" cy="705.5" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2116.0" y="709.5" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="4017.5" cy="729.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4017.5" y="733.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_plan</text>
+<ellipse cx="4014.0" cy="763.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4014.0" y="767.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="4031.5" cy="797.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4031.5" y="801.0" text-anchor="middle" font-size="11">descripcion</text>
+<ellipse cx="4014.0" cy="831.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4014.0" y="835.0" text-anchor="middle" font-size="11">precio</text>
+<ellipse cx="3665.0" cy="746.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3665.0" y="750.0" text-anchor="middle" font-size="11">kg_incluidos</text>
+<ellipse cx="3661.5" cy="780.0" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3661.5" y="784.0" text-anchor="middle" font-size="11">descuento_pct</text>
+<ellipse cx="3686.0" cy="814.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3686.0" y="818.0" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="5304.5" cy="1226.0" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5304.5" y="1230.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_metodo</text>
+<ellipse cx="5294.0" cy="1260.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5294.0" y="1264.0" text-anchor="middle" font-size="11">nombre</text>
+<ellipse cx="5315.0" cy="1294.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5315.0" y="1298.0" text-anchor="middle" font-size="11">comision_pct</text>
+<ellipse cx="5089.0" cy="1351.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5089.0" y="1355.0" text-anchor="middle" font-size="11">en_linea</text>
+<ellipse cx="5178.0" cy="1351.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="5178.0" y="1355.0" text-anchor="middle" font-size="11">activo</text>
+<ellipse cx="3372.0" cy="1334.5" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3372.0" y="1338.5" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_suscripcion</text>
+<ellipse cx="3365.0" cy="1368.5" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3365.0" y="1372.5" text-anchor="middle" font-size="11">fecha_inicio</text>
+<ellipse cx="3354.5" cy="1402.5" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3354.5" y="1406.5" text-anchor="middle" font-size="11">fecha_fin</text>
+<ellipse cx="3396.5" cy="1436.5" rx="86.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3396.5" y="1440.5" text-anchor="middle" font-size="11">renovacion_automatica</text>
+<ellipse cx="802.5" cy="2186.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="802.5" y="2190.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_lote</text>
+<ellipse cx="806.0" cy="2220.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="806.0" y="2224.0" text-anchor="middle" font-size="11">codigo</text>
+<ellipse cx="781.5" cy="2254.0" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="781.5" y="2258.0" text-anchor="middle" font-size="11">fecha_cosecha</text>
+<ellipse cx="1142.5" cy="2294.5" rx="72.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1142.5" y="2298.5" text-anchor="middle" font-size="11">fecha_vencimiento</text>
+<ellipse cx="1121.5" cy="2328.5" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1121.5" y="2332.5" text-anchor="middle" font-size="11">cantidad_kg</text>
+<ellipse cx="1160.0" cy="2362.5" rx="90.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1160.0" y="2366.5" text-anchor="middle" font-size="11">cantidad_disponible_kg</text>
+<ellipse cx="884.5" cy="2044.0" rx="65.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="884.5" y="2048.0" text-anchor="middle" font-size="11">precio_finca_kg</text>
+<ellipse cx="1001.5" cy="2044.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1001.5" y="2048.0" text-anchor="middle" font-size="11">calidad</text>
+<ellipse cx="1087.0" cy="2044.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="1087.0" y="2048.0" text-anchor="middle" font-size="11">estado</text>
+<ellipse cx="3354.5" cy="1538.0" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3354.5" y="1542.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_pedido</text>
+<ellipse cx="3365.0" cy="1572.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3365.0" y="1576.0" text-anchor="middle" font-size="11">fecha_pedido</text>
+<ellipse cx="3407.0" cy="1606.0" rx="97.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3407.0" y="1610.0" text-anchor="middle" font-size="11">fecha_entrega_programada</text>
+<ellipse cx="3037.5" cy="1874.0" rx="72.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3037.5" y="1878.0" text-anchor="middle" font-size="11">direccion_entrega</text>
+<ellipse cx="3069.0" cy="1908.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3069.0" y="1912.0" text-anchor="middle" font-size="11">subtotal</text>
+<ellipse cx="3065.5" cy="1942.0" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3065.5" y="1946.0" text-anchor="middle" font-size="11">descuento</text>
+<ellipse cx="3333.5" cy="1874.0" rx="23.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3333.5" y="1878.0" text-anchor="middle" font-size="11">iva</text>
+<ellipse cx="3340.5" cy="1908.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3340.5" y="1912.0" text-anchor="middle" font-size="11">total</text>
+<ellipse cx="3368.5" cy="1942.0" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3368.5" y="1946.0" text-anchor="middle" font-size="11">observaciones</text>
+<ellipse cx="4307.5" cy="1083.5" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4307.5" y="1087.5" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_pago</text>
+<ellipse cx="4318.0" cy="1117.5" rx="48.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4318.0" y="1121.5" text-anchor="middle" font-size="11">fecha_pago</text>
+<ellipse cx="4300.5" cy="1151.5" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4300.5" y="1155.5" text-anchor="middle" font-size="11">valor</text>
+<ellipse cx="4318.0" cy="1185.5" rx="48.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4318.0" y="1189.5" text-anchor="middle" font-size="11">referencia</text>
+<ellipse cx="4348.0" cy="1689.0" rx="48.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4348.0" y="1693.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_factura</text>
+<ellipse cx="4334.0" cy="1723.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4334.0" y="1727.0" text-anchor="middle" font-size="11">numero</text>
+<ellipse cx="4358.5" cy="1757.0" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4358.5" y="1761.0" text-anchor="middle" font-size="11">fecha_emision</text>
+<ellipse cx="4341.0" cy="1791.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4341.0" y="1795.0" text-anchor="middle" font-size="11">subtotal</text>
+<ellipse cx="4102.0" cy="1831.0" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4102.0" y="1835.0" text-anchor="middle" font-size="11">descuento</text>
+<ellipse cx="4184.0" cy="1831.0" rx="23.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4184.0" y="1835.0" text-anchor="middle" font-size="11">iva</text>
+<ellipse cx="4252.0" cy="1831.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4252.0" y="1835.0" text-anchor="middle" font-size="11">total</text>
+<ellipse cx="3988.5" cy="2186.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3988.5" y="2190.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_despacho</text>
+<ellipse cx="3988.5" cy="2220.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3988.5" y="2224.0" text-anchor="middle" font-size="11">numero_guia</text>
+<ellipse cx="3985.0" cy="2254.0" rx="55.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="3985.0" y="2258.0" text-anchor="middle" font-size="11">fecha_salida</text>
+<ellipse cx="4328.5" cy="2294.5" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4328.5" y="2298.5" text-anchor="middle" font-size="11">fecha_entrega</text>
+<ellipse cx="4328.5" cy="2328.5" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4328.5" y="2332.5" text-anchor="middle" font-size="11">temperatura_c</text>
+<ellipse cx="4328.5" cy="2362.5" rx="58.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="4328.5" y="2366.5" text-anchor="middle" font-size="11">observaciones</text>
+<ellipse cx="134.5" cy="746.0" rx="65.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="134.5" y="750.0" text-anchor="middle" font-size="11" text-decoration="underline" font-weight="bold">id_notificacion</text>
+<ellipse cx="166.0" cy="780.0" rx="34.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="166.0" y="784.0" text-anchor="middle" font-size="11">titulo</text>
+<ellipse cx="162.5" cy="814.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="162.5" y="818.0" text-anchor="middle" font-size="11">mensaje</text>
+<ellipse cx="223.5" cy="871.0" rx="69.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="223.5" y="875.0" text-anchor="middle" font-size="11">fecha_programada</text>
+<ellipse cx="337.0" cy="871.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="337.0" y="875.0" text-anchor="middle" font-size="11">leida</text>
+<ellipse cx="443.5" cy="871.0" rx="62.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="443.5" y="875.0" text-anchor="middle" font-size="11">fecha_creacion</text>
+<ellipse cx="2250.5" cy="2186.0" rx="30.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2250.5" y="2190.0" text-anchor="middle" font-size="11" text-decoration="underline" font-style="italic">linea</text>
+<line x1="2234.8" y1="2193.0" x2="2266.2" y2="2193.0" stroke="#000" stroke-dasharray="3,2"/>
+<ellipse cx="2271.5" cy="2220.0" rx="51.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2271.5" y="2224.0" text-anchor="middle" font-size="11">cantidad_kg</text>
+<ellipse cx="2264.5" cy="2254.0" rx="44.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2264.5" y="2258.0" text-anchor="middle" font-size="11">precio_kg</text>
+<ellipse cx="2042.0" cy="2311.0" rx="37.5" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2042.0" y="2315.0" text-anchor="middle" font-size="11">iva_pct</text>
+<ellipse cx="2134.5" cy="2311.0" rx="41.0" ry="13.0" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="2134.5" y="2315.0" text-anchor="middle" font-size="11">subtotal</text>
+</svg>

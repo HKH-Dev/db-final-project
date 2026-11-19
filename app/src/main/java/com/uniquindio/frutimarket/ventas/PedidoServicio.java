@@ -233,16 +233,15 @@ public class PedidoServicio {
         if (vigentes > 0) {
             throw new ReglaException("Ya tienes un plan activo. Cancélalo o espera a que venza para cambiarlo.");
         }
-        Map<String, Object> pl = jdbc.queryForMap("SELECT nombre, periodicidad, precio FROM plan WHERE id_plan = ? AND activo = 1", idPlan);
+        Map<String, Object> pl = jdbc.queryForMap("""
+                SELECT pl.nombre, pl.precio, pe.dias
+                  FROM plan pl JOIN periodicidad pe ON pe.codigo = pl.periodicidad
+                 WHERE pl.id_plan = ? AND pl.activo = 1""", idPlan);
         Map<String, Object> m = metodo(idMetodo);
         if (!Boolean.TRUE.equals(m.get("en_linea")) && !Integer.valueOf(1).equals(m.get("en_linea"))) {
             throw new ReglaException("Los planes se pagan con un medio en línea.");
         }
-        int dias = switch ((String) pl.get("periodicidad")) {
-            case "SEMANAL" -> 7;
-            case "QUINCENAL" -> 15;
-            default -> 30;
-        };
+        int dias = ((Number) pl.get("dias")).intValue();
         BigDecimal precio = (BigDecimal) pl.get("precio");
         if (simularRechazo) {
             throw new ReglaException("La pasarela rechazó el pago de " + pesos(precio) + ". No se activó el plan.");

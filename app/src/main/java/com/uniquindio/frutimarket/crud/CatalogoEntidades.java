@@ -23,7 +23,8 @@ import java.util.Optional;
 import org.springframework.stereotype.Component;
 
 /**
- * Las 20 entidades fuertes del modelo con su registro, modificacion, eliminacion y consulta.
+ * Las 30 entidades fuertes del modelo (20 de negocio y 10 catalogos) con su registro, modificacion,
+ * eliminacion y consulta.
  * (detalle_pedido, la entidad debil, se gestiona desde la pantalla del pedido.)
  */
 @Component
@@ -54,7 +55,7 @@ public class CatalogoEntidades {
                 .det(de("fecha_registro", "Fecha de registro", Formato.FECHA)).det(texto("usuario", "Usuario del sistema"))
                 .det(de("activo", "Activo", Formato.BOOLEANO))
                 .campo(texto("nombre", "Nombre o razón social", 120))
-                .campo(opciones("tipo_cliente", "Tipo de cliente", "HOGAR", "RESTAURANTE", "HOTEL", "TIENDA", "SUPERMERCADO"))
+                .campo(fk("tipo_cliente", "Tipo de cliente", "SELECT codigo, nombre FROM tipo_cliente ORDER BY nombre"))
                 .campo(opciones("tipo_documento", "Tipo de documento", "CC", "CE", "NIT"))
                 .campo(texto("numero_documento", "Número de documento", 20).ayuda("NIT con dígito de verificación, p. ej. 900456123-4"))
                 .campo(telefono("telefono", "Teléfono")).campo(email("email", "Correo electrónico"))
@@ -93,7 +94,7 @@ public class CatalogoEntidades {
                 .col(de("kg_incluidos", "Kg incluidos", Formato.KG)).col(de("descuento_pct", "Descuento", Formato.PORCENTAJE))
                 .col(de("activas", "Suscripciones activas", Formato.ENTERO)).det(texto("descripcion", "Descripción")).det(de("activo", "Activo", Formato.BOOLEANO))
                 .campo(texto("nombre", "Nombre", 60)).campo(largo("descripcion", "Descripción", 300))
-                .campo(opciones("periodicidad", "Periodicidad", "SEMANAL", "QUINCENAL", "MENSUAL"))
+                .campo(fk("periodicidad", "Periodicidad", "SELECT codigo, CONCAT(nombre, ' (', dias, ' días)') FROM periodicidad ORDER BY dias"))
                 .campo(moneda("precio", "Precio")).campo(decimal("kg_incluidos", "Kg incluidos"))
                 .campo(decimal("descuento_pct", "Descuento en compras adicionales (%)").ayuda("Entre 0 y 30"))
                 .campo(booleano("activo", "Activo")));
@@ -109,7 +110,7 @@ public class CatalogoEntidades {
                 .det(de("renovacion_automatica", "Renovación automática", Formato.BOOLEANO))
                 .campo(fk("id_cliente", "Cliente", FK_CLIENTE)).campo(fk("id_plan", "Plan", "SELECT id_plan, CONCAT(nombre, ' - ', periodicidad) FROM plan ORDER BY precio"))
                 .campo(fecha("fecha_inicio", "Fecha de inicio")).campo(fecha("fecha_fin", "Fecha de fin"))
-                .campo(opciones("estado", "Estado", "ACTIVA", "PAUSADA", "CANCELADA", "VENCIDA"))
+                .campo(fk("estado", "Estado", "SELECT codigo, nombre FROM estado_suscripcion ORDER BY nombre"))
                 .campo(booleano("renovacion_automatica", "Renovación automática")));
 
         agregar(new Entidad("pagos", "pago", "id_pago", "Pagos", "pago", "credit-card", "Comercial")
@@ -125,7 +126,7 @@ public class CatalogoEntidades {
                 .col(de("fecha_pago", "Fecha", Formato.FECHA_HORA)).col(texto("referencia", "Referencia")).col(texto("cliente", "Cliente"))
                 .col(texto("concepto", "Concepto")).col(texto("metodo", "Medio")).col(de("valor", "Valor", Formato.MONEDA)).col(de("estado", "Estado", Formato.ESTADO))
                 .campo(fk("id_metodo", "Medio de pago", "SELECT id_metodo, nombre FROM metodo_pago ORDER BY nombre"))
-                .campo(opciones("estado", "Estado", "APROBADO", "RECHAZADO", "PENDIENTE", "REEMBOLSADO"))
+                .campo(fk("estado", "Estado", "SELECT codigo, nombre FROM estado_pago ORDER BY nombre"))
                 .sinCrear());
 
         agregar(new Entidad("facturas", "factura", "id_factura", "Facturas", "factura", "receipt", "Comercial")
@@ -149,7 +150,7 @@ public class CatalogoEntidades {
                 .col(texto("titulo", "Título")).col(de("leida", "Leída", Formato.BOOLEANO)).det(texto("mensaje", "Mensaje"))
                 .det(de("fecha_creacion", "Creada", Formato.FECHA_HORA))
                 .campo(fk("id_usuario", "Usuario", FK_USUARIO_LIBRE))
-                .campo(opciones("tipo", "Tipo", "RECORDATORIO", "PEDIDO", "PAGO", "SUSCRIPCION", "INVENTARIO", "SISTEMA"))
+                .campo(fk("tipo", "Tipo", "SELECT codigo, nombre FROM tipo_notificacion ORDER BY nombre"))
                 .campo(texto("titulo", "Título", 100)).campo(largo("mensaje", "Mensaje", 400))
                 .campo(fechaHora("fecha_programada", "Mostrar a partir de")).campo(booleano("leida", "Leída")));
 
@@ -270,7 +271,7 @@ public class CatalogoEntidades {
                 .campo(fk("id_transportador", "Transportador", "SELECT id_transportador, CONCAT(nombre, ' - ', placa) FROM transportador ORDER BY nombre"))
                 .campo(fechaHora("fecha_salida", "Fecha y hora de salida"))
                 .campo(fechaHora("fecha_entrega", "Fecha y hora de entrega").opcional())
-                .campo(opciones("estado", "Estado", "EN_RUTA", "ENTREGADO", "DEVUELTO"))
+                .campo(fk("estado", "Estado", "SELECT codigo, nombre FROM estado_despacho ORDER BY nombre"))
                 .campo(decimal("temperatura_c", "Temperatura de la carga (°C)").opcional())
                 .campo(largo("observaciones", "Observaciones", 300).opcional())
                 .sinCrear());
@@ -296,7 +297,7 @@ public class CatalogoEntidades {
                           FROM metodo_pago mp""").orden("nombre")
                 .col(texto("nombre", "Medio")).col(de("tipo", "Tipo", Formato.ESTADO)).col(de("comision_pct", "Comisión", Formato.PORCENTAJE))
                 .col(de("en_linea", "En línea", Formato.BOOLEANO)).col(de("pagos", "Pagos", Formato.ENTERO)).det(de("activo", "Activo", Formato.BOOLEANO))
-                .campo(texto("nombre", "Nombre", 40)).campo(opciones("tipo", "Tipo", "TARJETA", "BILLETERA", "PSE", "EFECTIVO", "TRANSFERENCIA"))
+                .campo(texto("nombre", "Nombre", 40)).campo(fk("tipo", "Tipo", "SELECT codigo, nombre FROM tipo_metodo_pago ORDER BY nombre"))
                 .campo(decimal("comision_pct", "Comisión de la pasarela (%)")).campo(booleano("en_linea", "Se paga en línea"))
                 .campo(booleano("activo", "Activo")));
 
@@ -308,7 +309,7 @@ public class CatalogoEntidades {
                           FROM municipio m""").orden("nombre")
                 .col(texto("nombre", "Municipio")).col(texto("departamento", "Departamento")).col(texto("codigo_dane", "Código DANE"))
                 .col(de("clientes", "Clientes", Formato.ENTERO)).col(de("fincas", "Fincas", Formato.ENTERO))
-                .campo(texto("nombre", "Nombre", 80)).campo(texto("departamento", "Departamento", 60))
+                .campo(texto("nombre", "Nombre", 80)).campo(fk("departamento", "Departamento", "SELECT nombre, nombre FROM departamento ORDER BY nombre"))
                 .campo(texto("codigo_dane", "Código DANE", 5).ayuda("Cinco dígitos, p. ej. 63001")));
 
         // ------------------------------------------------------------- Administracion
@@ -323,7 +324,7 @@ public class CatalogoEntidades {
                 .col(de("salario", "Salario", Formato.MONEDA)).col(de("fecha_ingreso", "Ingreso", Formato.FECHA)).col(de("activo", "Activo", Formato.BOOLEANO))
                 .det(texto("numero_documento", "Cédula")).det(texto("telefono", "Teléfono")).det(texto("email", "Correo")).det(texto("usuario", "Usuario del sistema"))
                 .campo(texto("nombres", "Nombres", 60)).campo(texto("apellidos", "Apellidos", 60))
-                .campo(texto("numero_documento", "Cédula", 20)).campo(texto("cargo", "Cargo", 40))
+                .campo(texto("numero_documento", "Cédula", 20)).campo(fk("cargo", "Cargo", "SELECT nombre, nombre FROM cargo ORDER BY nombre"))
                 .campo(fk("id_punto", "Punto de acopio", FK_PUNTO))
                 .campo(moneda("salario", "Salario mensual").minimo(1750905).ayuda("No puede ser menor al SMMLV 2026: $ 1.750.905"))
                 .campo(fecha("fecha_ingreso", "Fecha de ingreso")).campo(telefono("telefono", "Teléfono"))
@@ -353,6 +354,69 @@ public class CatalogoEntidades {
                           FROM rol r""").orden("id")
                 .col(de("nombre", "Rol", Formato.ESTADO)).col(texto("descripcion", "Descripción")).col(de("usuarios", "Usuarios", Formato.ENTERO))
                 .campo(texto("nombre", "Nombre", 30)).campo(largo("descripcion", "Descripción", 200)));
+
+        // ------------------------------------------------------------- Catalogos (listas de valores)
+        agregar(catalogo("departamentos", "departamento", "nombre", "Departamentos", "departamento", "map",
+                "Departamentos de Colombia con su código DANE; los municipios los referencian.",
+                "SELECT d.nombre AS id, d.nombre, d.codigo_dane, (SELECT COUNT(*) FROM municipio m WHERE m.departamento = d.nombre) AS usos FROM departamento d")
+                .col(texto("nombre", "Departamento")).col(texto("codigo_dane", "Código DANE")).col(de("usos", "Municipios", Formato.ENTERO))
+                .campo(texto("nombre", "Nombre", 60)).campo(texto("codigo_dane", "Código DANE", 2).ayuda("Dos dígitos, p. ej. 63")));
+        agregar(catalogo("cargos", "cargo", "nombre", "Cargos", "cargo", "briefcase",
+                "Cargos de los empleados, agrupados por área.",
+                "SELECT c.nombre AS id, c.nombre, c.area, c.descripcion, (SELECT COUNT(*) FROM empleado e WHERE e.cargo = c.nombre) AS usos FROM cargo c")
+                .col(texto("nombre", "Cargo")).col(de("area", "Área", Formato.ESTADO)).col(texto("descripcion", "Descripción"))
+                .col(de("usos", "Empleados", Formato.ENTERO))
+                .campo(texto("nombre", "Nombre", 40))
+                .campo(opciones("area", "Área", "OPERACION", "ADMINISTRACION", "COMERCIAL", "DIRECCION"))
+                .campo(largo("descripcion", "Descripción", 200)));
+        agregar(codigos("tipos-cliente", "tipo_cliente", "Tipos de cliente", "tipo de cliente", "shop", 20,
+                "Clasificación de los compradores.", "cliente", "tipo_cliente", "Clientes"));
+        agregar(catalogo("periodicidades", "periodicidad", "codigo", "Periodicidades", "periodicidad", "calendar-week",
+                "Duración de un periodo de los planes de suscripción.",
+                "SELECT p.codigo AS id, p.codigo, p.nombre, p.dias, (SELECT COUNT(*) FROM plan pl WHERE pl.periodicidad = p.codigo) AS usos FROM periodicidad p")
+                .orden("dias")
+                .col(texto("codigo", "Código")).col(texto("nombre", "Nombre")).col(de("dias", "Días", Formato.ENTERO))
+                .col(de("usos", "Planes", Formato.ENTERO))
+                .campo(texto("codigo", "Código", 10).ayuda("En mayúsculas, sin espacios"))
+                .campo(texto("nombre", "Nombre", 30)).campo(entero("dias", "Días del periodo").minimo(1)));
+        agregar(codigos("tipos-medio-pago", "tipo_metodo_pago", "Tipos de medio de pago", "tipo de medio de pago", "credit-card-2-front", 20,
+                "Familias de medios de pago (tarjeta, PSE, billetera…).", "metodo_pago", "tipo", "Medios de pago"));
+        agregar(codigos("tipos-notificacion", "tipo_notificacion", "Tipos de notificación", "tipo de notificación", "bell", 15,
+                "Clases de avisos y recordatorios.", "notificacion", "tipo", "Notificaciones"));
+        agregar(codigos("estados-suscripcion", "estado_suscripcion", "Estados de suscripción", "estado de suscripción", "toggles", 12,
+                "Estados por los que pasa una suscripción.", "suscripcion", "estado", "Suscripciones"));
+        agregar(catalogo("estados-pedido", "estado_pedido", "codigo", "Estados de pedido", "estado de pedido", "signpost-split",
+                "Flujo del pedido: pendiente → pagado → despachado → entregado (o cancelado).",
+                "SELECT x.codigo AS id, x.codigo, x.nombre, x.descripcion, x.orden, (SELECT COUNT(*) FROM pedido t WHERE t.estado = x.codigo) AS usos FROM estado_pedido x")
+                .orden("orden")
+                .col(de("orden", "Orden", Formato.ENTERO)).col(texto("codigo", "Código")).col(texto("nombre", "Nombre"))
+                .col(texto("descripcion", "Descripción")).col(de("usos", "Pedidos", Formato.ENTERO))
+                .campo(texto("codigo", "Código", 12).ayuda("En mayúsculas, sin espacios"))
+                .campo(texto("nombre", "Nombre", 30)).campo(entero("orden", "Orden en el flujo").minimo(1))
+                .campo(largo("descripcion", "Descripción", 200)));
+        agregar(codigos("estados-pago", "estado_pago", "Estados de pago", "estado de pago", "cash-coin", 12,
+                "Resultado de la transacción en la pasarela.", "pago", "estado", "Pagos"));
+        agregar(codigos("estados-despacho", "estado_despacho", "Estados de despacho", "estado de despacho", "truck", 12,
+                "Seguimiento de la entrega con el transportador.", "despacho", "estado", "Despachos"));
+    }
+
+    /** Catalogo con llave natural, solo para el administrador. La columna "usos" cuenta las filas que lo referencian. */
+    private static Entidad catalogo(String clave, String tabla, String pk, String titulo, String singular, String icono,
+                                    String descripcion, String sql) {
+        return new Entidad(clave, tabla, pk, titulo, singular, icono, "Catálogos")
+                .soloAdmin().pkNatural().descripcion(descripcion).lista(sql).orden("nombre");
+    }
+
+    /** Catalogo de codigos (codigo, nombre, descripcion) */
+    private static Entidad codigos(String clave, String tabla, String titulo, String singular, String icono, int largoCodigo,
+                                   String descripcion, String tablaUsa, String columnaUsa, String etiquetaUsos) {
+        String sql = "SELECT x.codigo AS id, x.codigo, x.nombre, x.descripcion, (SELECT COUNT(*) FROM " + tablaUsa + " t WHERE t."
+                + columnaUsa + " = x.codigo) AS usos FROM " + tabla + " x";
+        return catalogo(clave, tabla, "codigo", titulo, singular, icono, descripcion, sql)
+                .col(texto("codigo", "Código")).col(texto("nombre", "Nombre")).col(texto("descripcion", "Descripción"))
+                .col(de("usos", etiquetaUsos, Formato.ENTERO))
+                .campo(texto("codigo", "Código", largoCodigo).ayuda("En mayúsculas, sin espacios"))
+                .campo(texto("nombre", "Nombre", 40)).campo(largo("descripcion", "Descripción", 200));
     }
 
     private void agregar(Entidad e) {

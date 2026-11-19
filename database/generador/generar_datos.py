@@ -99,6 +99,70 @@ def nit():
 # ---------------------------------------------------------------------------
 # Catalogos escritos a mano
 # ---------------------------------------------------------------------------
+# Listas de valores normalizadas (llave natural). Se insertan antes que todo lo demas.
+insert("departamento", ["nombre", "codigo_dane"],
+       [("Quindío", "63"), ("Risaralda", "66"), ("Caldas", "17"), ("Valle del Cauca", "76"), ("Tolima", "73")])
+CARGOS_CATALOGO = [  # nombre, area, descripcion
+    ("Gerente general", "DIRECCION", "Dirige la operación de FrutiMarket y responde por los resultados del negocio."),
+    ("Contador", "ADMINISTRACION", "Lleva la contabilidad, la facturación electrónica y las obligaciones tributarias."),
+    ("Auxiliar administrativo", "ADMINISTRACION", "Apoya la gestión documental, la nómina y la atención a proveedores."),
+    ("Ejecutivo comercial", "COMERCIAL", "Atiende hoteles, restaurantes y tiendas, y vende los planes de suscripción."),
+    ("Coordinador de logística", "OPERACION", "Programa rutas, transportadores y despachos de todos los puntos."),
+    ("Coordinador de acopio", "OPERACION", "Administra un punto de acopio: recibe lotes, gestiona pedidos y despachos."),
+    ("Analista de calidad", "OPERACION", "Clasifica los lotes recibidos (extra, primera, segunda) y controla la cadena de frío."),
+    ("Auxiliar de bodega", "OPERACION", "Recibe, pesa, almacena y alista los productos del punto de acopio."),
+    ("Operario de cargue", "OPERACION", "Carga y descarga los vehículos de los transportadores."),
+]
+CARGO_NORMAL = {"Ejecutiva comercial": "Ejecutivo comercial", "Coordinadora de logística": "Coordinador de logística"}
+insert("cargo", ["nombre", "area", "descripcion"], CARGOS_CATALOGO)
+insert("tipo_cliente", ["codigo", "nombre", "descripcion"], [
+    ("HOGAR", "Hogar", "Familia que compra para su consumo en casa."),
+    ("RESTAURANTE", "Restaurante", "Restaurante, cafetería o servicio de alimentos."),
+    ("HOTEL", "Hotel", "Hotel, finca turística o glamping de la zona cafetera."),
+    ("TIENDA", "Tienda", "Tienda de barrio o frutería que revende al detal."),
+    ("SUPERMERCADO", "Supermercado", "Cadena o supermercado con compras de volumen."),
+])
+insert("periodicidad", ["codigo", "nombre", "dias"], [("SEMANAL", "Semanal", 7), ("QUINCENAL", "Quincenal", 15), ("MENSUAL", "Mensual", 30)])
+insert("tipo_metodo_pago", ["codigo", "nombre", "descripcion"], [
+    ("TARJETA", "Tarjeta", "Tarjeta de crédito o débito procesada por la pasarela de pagos."),
+    ("PSE", "PSE", "Débito a cuenta de ahorros o corriente por el botón PSE."),
+    ("BILLETERA", "Billetera digital", "Pago desde el celular con Nequi o Daviplata."),
+    ("TRANSFERENCIA", "Transferencia", "Transferencia bancaria a la cuenta de FrutiMarket."),
+    ("EFECTIVO", "Efectivo", "Pago en efectivo al recibir el pedido."),
+])
+insert("tipo_notificacion", ["codigo", "nombre", "descripcion"], [
+    ("RECORDATORIO", "Recordatorio", "Recordatorio programado por el usuario o por el sistema (renovación, pago pendiente)."),
+    ("PEDIDO", "Pedido", "Cambios de estado de un pedido: creado, despachado, entregado o cancelado."),
+    ("PAGO", "Pago", "Resultado de un pago en línea o de un reembolso."),
+    ("SUSCRIPCION", "Suscripción", "Activación, renovación o cancelación de un plan."),
+    ("INVENTARIO", "Inventario", "Alertas de lotes por vencer o con pocas existencias."),
+    ("SISTEMA", "Sistema", "Avisos generales de la plataforma."),
+])
+insert("estado_suscripcion", ["codigo", "nombre", "descripcion"], [
+    ("ACTIVA", "Activa", "El plan está vigente y el cliente recibe su descuento."),
+    ("PAUSADA", "Pausada", "El cliente suspendió temporalmente las entregas."),
+    ("CANCELADA", "Cancelada", "El cliente terminó el plan antes de su fecha de fin."),
+    ("VENCIDA", "Vencida", "El periodo terminó y no se renovó."),
+])
+insert("estado_pedido", ["codigo", "nombre", "descripcion", "orden"], [
+    ("PENDIENTE", "Pendiente de pago", "Pedido creado; el inventario está reservado y espera el pago.", 1),
+    ("PAGADO", "Pagado", "Pago aprobado y factura emitida; listo para despachar.", 2),
+    ("DESPACHADO", "Despachado", "Salió del punto de acopio con un transportador.", 3),
+    ("ENTREGADO", "Entregado", "El cliente recibió el pedido.", 4),
+    ("CANCELADO", "Cancelado", "Pedido anulado; el inventario volvió a los lotes.", 5),
+])
+insert("estado_pago", ["codigo", "nombre", "descripcion"], [
+    ("PENDIENTE", "Pendiente", "Pago iniciado que aún no confirma la entidad financiera."),
+    ("APROBADO", "Aprobado", "La entidad financiera aprobó la transacción."),
+    ("RECHAZADO", "Rechazado", "La entidad financiera rechazó la transacción."),
+    ("REEMBOLSADO", "Reembolsado", "El valor se devolvió al cliente por cancelación."),
+])
+insert("estado_despacho", ["codigo", "nombre", "descripcion"], [
+    ("EN_RUTA", "En ruta", "El pedido va en camino con el transportador."),
+    ("ENTREGADO", "Entregado", "El transportador entregó el pedido al cliente."),
+    ("DEVUELTO", "Devuelto", "El pedido no pudo entregarse y regresó al punto."),
+])
+
 MUNICIPIOS = [  # nombre, departamento, DANE
     ("Armenia", "Quindío", "63001"), ("Buenavista", "Quindío", "63111"), ("Calarcá", "Quindío", "63130"),
     ("Circasia", "Quindío", "63190"), ("Córdoba", "Quindío", "63212"), ("Filandia", "Quindío", "63272"),
@@ -724,6 +788,8 @@ out.clear()
 insert("usuario", ["id_usuario", "id_rol", "username", "password_hash", "nombre_completo", "email", "telefono", "activo", "fecha_registro", "ultimo_acceso"], usuarios)
 seccion_usuarios = out[:]
 out.clear()
+for e in empleados:  # cargo del catalogo (sin variante de genero)
+    e[6] = CARGO_NORMAL.get(e[6], e[6])
 insert("empleado", ["id_empleado", "id_punto", "id_usuario", "numero_documento", "nombres", "apellidos", "cargo", "salario", "fecha_ingreso", "telefono", "email", "activo"], empleados)
 insert("campesino", ["id_campesino", "id_usuario", "id_municipio", "tipo_documento", "numero_documento", "nombres", "apellidos", "telefono", "email", "fecha_vinculacion", "certificado_bpa", "activo"], campesinos)
 insert("finca", ["id_finca", "id_campesino", "id_municipio", "nombre", "vereda", "area_hectareas", "altitud_msnm"], fincas)
@@ -740,8 +806,9 @@ insert("notificacion", ["id_notificacion", "id_usuario", "tipo", "titulo", "mens
 resto = out[:]
 
 pie = """
--- Lotes que vencieron con existencias quedan marcados como VENCIDO
-UPDATE lote SET estado = 'VENCIDO' WHERE estado = 'DISPONIBLE' AND fecha_vencimiento < CURDATE();
+-- Lotes que vencieron con existencias al cierre de la simulacion quedan marcados como VENCIDO
+-- (04_actualizar_fechas.sql vuelve a evaluarlo con la fecha de hoy)
+UPDATE lote SET estado = 'VENCIDO' WHERE estado = 'DISPONIBLE' AND fecha_vencimiento < '""" + FIN.isoformat() + """';
 COMMIT;
 """
 # orden: municipio, rol (en body_inicio estan municipio, rol, categoria, producto, punto, plan, metodo)
